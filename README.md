@@ -21,10 +21,11 @@ Breve descrição.
 ---
 
 ## ✨ Funcionalidades Principais
-Liste as funcionalidades de forma clara e objetiva.
 
+- 🔐 **Gestão de Acessos e Perfis:** Sistema restrito a usuários previamente cadastrados, contendo diferenciação de permissões para Clientes e Agentes.
+- 🚗 **Gestão de Aluguéis:** Clientes podem solicitar, alterar, consultar e cancelar seus pedidos de aluguel via internet
+- 🏦 **Análise Financeira e Aprovação:** Agentes podem realizar Avaliação de Crédito e Associação de Crédito.
 - 🌐 **Internacionalização (i18n):** Suporte aos idiomas Português BR e Inglês.
-- 🔄 **Integração com APIs Externas:** Conexão com serviços de terceiros envio de e-mail.
 
 ---
 ## 🛠 Tecnologias Utilizadas
@@ -33,8 +34,10 @@ As seguintes ferramentas, frameworks e bibliotecas foram utilizados na construç
 
 ### 💻 Front-end
 
+* **Framework/Biblioteca**: [React]
 * **Linguagem/Superset:** [HTML, JavaScript]
-* **Estilização:** [CSS, React]
+* **Estilização:** [CSS]
+* **Ferramenta de Build:** [Vite]
 
 ## 🏗 Arquitetura
 
@@ -47,7 +50,7 @@ Liste aqui links para documentação técnica, referências de bibliotecas compl
 
 * 📖 **Framework/Biblioteca (Front-end):** [Documentação Oficial do **React**](https://react.dev/reference/react)
 * 📖 **Build Tool (Front-end):** [Guia de Configuração do **Vite**](https://vitejs.dev/config/)
-* 📖 **Framework (Back-end):** [Documentação Oficial do **Spring Boot**](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+* 📖 **Framework (Back-end):** [Documentação Oficial do **Micronaut**](https://docs.micronaut.io/latest/guide/)
 * 📖 **Containerização:** [Documentação de Referência do **Docker**](https://docs.docker.com/)
 * 📖 **Guia de Estilo:** [**Conventional Commits** (Padrão de Mensagens)](https://www.conventionalcommits.org/en/v1.0.0/)
 * 📖 **Documentação Interna:** [Design System do Projeto](./docs/design-system.md)
