@@ -34,10 +34,8 @@ As seguintes ferramentas, frameworks e bibliotecas foram utilizados na construç
 
 ### 💻 Front-end
 
-* **Framework/Biblioteca**: [React]
-* **Linguagem/Superset:** [HTML, JavaScript]
+* **Linguagem/Superset:** [HTML, CSS, JavaScript]
 * **Estilização:** [CSS]
-* **Ferramenta de Build:** [Vite]
 
 ## 🏗 Arquitetura
 
