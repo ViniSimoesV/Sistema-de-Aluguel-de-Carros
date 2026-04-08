@@ -1,5 +1,10 @@
 package com.example.Facade;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
+
 import com.example.Controller.ClienteDTO;
 import com.example.model.Cliente;
 import com.example.Service.ClienteService;
@@ -26,5 +31,16 @@ public class ClienteFacade {
         return new ClienteDTO(atualizado.getCpf(), atualizado.getNome(), atualizado.getRg(), atualizado.getEmprego());
     }
     
+    public List<ClienteDTO> listarTodosClientes() {
+    Iterable<Cliente> clientes = clienteService.listarTodos();
+    // Converte a lista de Model para DTO
+    return StreamSupport.stream(clientes.spliterator(), false)
+            .map(c -> new ClienteDTO(c.getCpf(), c.getNome(), c.getRg(), c.getEmprego()))
+            .collect(Collectors.toList());
+    }
+
+    public void deletarCliente(String cpf) {
+        clienteService.deletar(cpf);
+    }
     // Outros métodos de listagem podem ser adicionados aqui seguindo a mesma lógica
 }
