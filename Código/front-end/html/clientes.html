@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <script src="../js/navbar.js"></script>
+
+    <div class="content">
+        <div class="page-header">
+            <h2>Gestão de Clientes</h2>
+        </div>
+
+        <div class="table-container">
+            <div class="table-actions">
+                <a href="cadastro_cliente.html" class="btn-primary">+ Novo Cliente</a>
+            </div>
+
+            <table id="tabelaClientes" class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>RG</th>
+                        <th>Emprego</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modalEdicao" class="modal">
+        <div class="modal-content">
+            <h3>Editar Cliente</h3>
+            <form id="formEdicao">
+                <input type="hidden" id="edit-cpf">
+                <input type="text" id="edit-nome" placeholder="Nome">
+                <input type="text" id="edit-rg" placeholder="RG">
+                <input type="text" id="edit-emprego" placeholder="Emprego">
+                <br><br>
+                <button type="submit" style="background:#28a745; color:white; border:none; padding:10px;">Salvar</button>
+                <button type="button" onclick="fecharModal()" style="background:#ccc; border:none; padding:10px;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/clientes.js"></script>
+</body>
+</html>
