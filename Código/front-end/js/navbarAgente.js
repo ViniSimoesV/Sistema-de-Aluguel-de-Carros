@@ -4,7 +4,7 @@ function renderNavbar() {
         <a class="nav-logo">HORIZONTES</a>
         <ul class="nav-links">
             <li><a href="alugueis_agente.html">Início</a></li>
-            <li><a href="lista_clientes.html">Clientes</a></li>
+            <li><a href="lista_de_clientes.html">Clientes</a></li>
             <li><a href="lista_carros.html">Veículos</a></li>
             <li><a href="perfil_agente.html">Perfil</a></li> 
             <li><a href="../index.html" class="btn-sair">Sair <i class="fas fa-sign-out-alt"></i></a></li>

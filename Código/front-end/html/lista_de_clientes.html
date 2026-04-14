@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Clientes - Horizontes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleLista.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="../js/navbarAgente.js" defer></script>
+    <script src="../js/modal.js" defer></script>
+</head>
+<body>
+
+    <div class="content">
+        <div class="page-header">
+            <h2>Gestão de Clientes</h2>
+            <p>Lista de usuários cadastrados no sistema Horizontes.</p>
+        </div>
+
+        <div class="table-container">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF / RG</th>
+                        <th>Contato</th>
+                        <th>Empregador / Cargo</th>
+                        <th>Renda Mensal</th>
+                        <th style="text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Vinícius Simões Viana</strong><br>
+                            <small style="color: #64748b;">Nasc: 15/06/2000</small>
+                        </td>
+                        <td>
+                            123.456.789-00<br>
+                            <small style="color: #64748b;">MG-12.345.678</small>
+                        </td>
+                        <td>
+                            vinicius@email.com<br>
+                            (31) 98888-8888
+                        </td>
+                        <td>
+                            PUC Minas<br>
+                            <small style="color: #64748b;">Engenheiro de Software</small>
+                        </td>
+                        <td class="text-valor">R$ 5.000,00</td>
+                        <td style="text-align: center;">
+                            <a href="javascript:void(0)" class="btn-edit-outline" title="Ver Detalhes" onclick="abrirDetalhes(1)">
+                                <i class="fas fa-eye"></i> Detalhes
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Ana Clara Silva</strong><br>
+                            <small style="color: #64748b;">Nasc: 12/10/1998</small>
+                        </td>
+                        <td>
+                            987.654.321-11<br>
+                            <small style="color: #64748b;">MG-11.222.333</small>
+                        </td>
+                        <td>
+                            ana.clara@email.com<br>
+                            (31) 97777-7777
+                        </td>
+                        <td>
+                            Horizontes Tech<br>
+                            <small style="color: #64748b;">Analista de Dados</small>
+                        </td>
+                        <td class="text-valor">R$ 4.200,00</td>
+                        <td style="text-align: center;">
+                            <a href="javascript:void(0)" class="btn-edit-outline" title="Ver Detalhes" onclick="abrirDetalhes(2)">
+                                <i class="fas fa-eye"></i> Detalhes
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modalDetalhes" class="modal-detalhes">
+        <div class="modal-content-perfil">
+            <span class="close-modal">&times;</span>
+            
+            <div class="page-header">
+                <h2>Dados do Cliente</h2>
+                <p>Informações completas e histórico de locação.</p>
+            </div>
+
+            <div class="modal-scroll-area">
+                <div class="profile-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Dados Pessoais & Contato</h3>
+                        <p><strong>Nome:</strong> <span id="detalhe-nome">Vinícius Simões Viana</span></p>
+                        <p><strong>CPF:</strong> 123.456.789-00 | <strong>RG:</strong> MG-12.345.678</p>
+                        <p><strong>E-mail:</strong> vinicius@email.com</p>
+                        <p><strong>Telefone:</strong> (31) 98888-8888</p>
+                        <p><strong>Endereço:</strong> Av. dos Horizontes, 1000, Centro - BH</p>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="section-title">Análise Profissional</h3>
+                        <p><strong>Cargo:</strong> Engenheiro de Software</p>
+                        <p><strong>Empresa:</strong> PUC Minas</p>
+                        <p><strong>Renda Declarada:</strong> <span class="text-valor">R$ 5.000,00</span></p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Endereço</h3>
+                        <p><strong>Rua:</strong> Av. dos Horizontes, 1000</p>
+                        <p><strong>Bairro:</strong> Centro</p>
+                        <p><strong>Complemento:</strong> - </p>
+                        <p><strong>Cidade:</strong> Belo Horizonte</p>
+                        <p><strong>Estado:</strong> MG</p>
+                    </div>
+                </div>
+
+                <div class="form-section" style="margin-top: 20px;">
+                    <h3 class="section-title">Histórico de Aluguéis</h3>
+                    <table class="modern-table" style="font-size: 0.85rem;">
+                        <thead>
+                            <tr>
+                                <th>Veículo</th>
+                                <th>Data</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Toyota Corolla 2024</td>
+                                <td>10/01/2026</td>
+                                <td>R$ 1.200,00</td>
+                                <td><span class="badge status-ativo">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Fiat Uno (Escada)</td>
+                                <td>05/12/2025</td>
+                                <td>R$ 450,00</td>
+                                <td><span class="badge status-ativo">Finalizado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+.modern-table td {
+    vertical-align: middle;
+    line-height: 1.4;
+}
+
+.modern-table td small {
+    display: block;
+    margin-top: 2px;
+}
+
+
+/* Estilo da Modal de Detalhes */
+.modal-detalhes {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 41, 55, 0.7); /* Dark com opacidade */
+}
+
+.modal-content-perfil {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 70%;
+    max-height: 85vh;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-scroll-area {
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 15px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.modal-content-perfil .section-title {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--primary);
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 5px;
+}
+
+.modal-content-perfil p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
