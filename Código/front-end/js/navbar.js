@@ -1,12 +1,12 @@
 function renderNavbar() {
     const navHTML = `
     <nav class="navbar">
-        <div class="nav-logo">Aluguel de Carros</div>
+        <a href="#" class="nav-logo">HORIZONTES</a>
         <ul class="nav-links">
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="clientes.html">Clientes</a></li>
-            <li><a href="#">Automóveis</a></li>
-            <li><a href="#">Aluguéis</a></li>
+            <li><a href="alugueis_cliente.html" class="active">Início</a></li>
+            <li><a href="solicitar_aluguel.html">Solicitar Aluguel</a></li>
+            <li><a href="editar_perfil.html">Editar Perfil</a></li>
+            <li><a href="index.html" class="btn-sair">Sair <i class="fas fa-sign-out-alt"></i></a></li>
         </ul>
     </nav>
     `;

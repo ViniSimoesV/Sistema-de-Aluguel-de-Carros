@@ -1,209 +1,112 @@
-/* --- Reset e Globais --- */
+/* Variáveis de Cores Horizontes */
+:root {
+    --primary: #3B82F6;       /* Azul Principal */
+    --primary-light: #60A5FA; /* Detalhes */
+    --dark: #1F2937;          /* Navbar e Textos */
+    --bg-light: #E0F2FE;      /* Fundo da Página */
+    --white: #FFFFFF;
+    --gray-light: #f3f4f6;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fc; /* Fundo cinza bem claro */
-    color: #333;
+    background-color: var(--bg-light);
+    color: var(--dark);
 }
 
-/* --- Container Principal --- */
+/* Conteúdo */
 .content {
-    padding: 0 10% 40px 10% ;
+    padding: 40px 5%;
 }
 
-/* --- Cabeçalho da Página --- */
 .page-header {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .page-header h2 {
+    color: var(--dark);
     font-size: 1.8rem;
-    color: #4e73df; /* Azul profissional */
-    font-weight: 600;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
 }
 
-.page-header p {
-    color: #858796;
-}
-
-/* --- Container da Tabela (Card Branco) --- */
+/* Card de Aluguel */
 .table-container {
-    background-color: #fff;
-    padding: 20px;
+    background-color: var(--white);
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra suave */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Área de Ação Acima da Tabela --- */
-.table-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-}
-
-/* --- Botões Modernos --- */
-.btn-primary, .btn-success, .btn-secondary {
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: 0.3s;
-    font-weight: 600;
-}
-
-.btn-primary {
-    background-color: #4e73df;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #2e59d9;
-}
-
-.btn-success {
-    background-color: #1cc88a;
-    color: white;
-}
-
-.btn-success:hover {
-    background-color: #17a673;
-}
-
-.btn-secondary {
-    background-color: #858796;
-    color: white;
-}
-
-/* --- Tabela Moderna --- */
 .modern-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 10px;
 }
 
 .modern-table thead th {
-    background-color: #f8f9fc;
-    color: #4e73df;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 15px;
     text-align: left;
-    border-bottom: 2px solid #e3e6f0;
+    padding: 15px;
+    background-color: var(--gray-light);
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
 }
 
 .modern-table tbody td {
     padding: 15px;
-    border-bottom: 1px solid #e3e6f0;
+    border-bottom: 1px solid var(--gray-light);
     font-size: 0.95rem;
 }
 
-.modern-table tbody tr:hover {
-    background-color: #f1f3f9;
-}
-
-/* --- Botões de Ação na Tabela (Minimalistas) --- */
-.action-icon {
-    background: none;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 0 5px;
-    transition: 0.2s;
-    color: #858796;
-}
-
-.btn-edit-icon:hover { color: #f6c23e; }
-.btn-delete-icon:hover { color: #e74c3c; }
-
-/* --- Auxiliares --- */
-.text-center { text-align: center !important; }
-
-/* --- Modal (Popup) - Design Arredondado --- */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(3px); /* Desfoque suave no fundo */
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 8% auto;
-    padding: 25px;
-    border-radius: 15px; /* Bordas arredondadas */
-    width: 450px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    position: relative;
-    border: none;
-}
-
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #aaa;
-}
-
-/* --- Formulário dentro do Modal --- */
-.modern-form .form-group { margin-bottom: 15px; }
-.modern-form label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; color: #555;}
-.modern-form input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d1d3e2;
-    border-radius: 8px;
-    font-size: 0.9rem;
-}
-.modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-/* --- Navbar Estilizada --- */
-.navbar {
-    background-color: #2c3e50;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    height: 60px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
-}
-
-.nav-logo {
-    color: #ffffff;
-    font-size: 1.2rem;
+/* Status Badge */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: bold;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
+.text-valor {
+    font-weight: 600;
+    color: var(--dark);
 }
 
-.nav-links li { padding: 0 15px; }
+.status-ativo { background: #dcfce7; color: #166534; }
+.status-pendente { background: #fef9c3; color: #854d0e; }
 
-.nav-links a {
-    color: #bdc3c7;
+/* Botões de Ação */
+.btn-action {
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.2s;
+}
+.btn-action:hover { color: var(--primary-light); }
+
+.btn-edit-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 2px solid var(--primary); 
+    color: var(--primary);
+    background-color: transparent;
+    border-radius: 8px;
     text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
     transition: 0.3s;
 }
 
-.nav-links a:hover { color: #ffffff; }
+.btn-edit-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}

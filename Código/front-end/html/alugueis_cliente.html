@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Aluguéis - Horizontes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="../js/navbar.js" defer></script>
+</head>
+<body>
+
+
+    <div class="content">
+        <div class="page-header">
+            <h2>Meus Aluguéis Ativos</h2>
+            <p>Acompanhe o status dos seus veículos alugados.</p>
+        </div>
+
+        <div class="table-container">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Veículo</th>
+                        <th>Placa</th>
+                        <th>Data Retirada</th>
+                        <th>Previsão Entrega</th>
+                        <th>Valor Total</th>
+                        <th>Status</th>
+                        <th style="text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Toyota Corolla 2024</td>
+                        <td><strong>ABC-1234</strong></td>
+                        <td>12/04/2026</td>
+                        <td>20/04/2026</td>
+                        <td class="text-valor">R$ 1.450,00</td>
+                        <td><span class="badge status-ativo">Ativo</span></td>
+                        <td style="text-align: center;">
+                            <a href="editar_aluguel.html" title="Solicitar Alteração" class="btn-edit-outline">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jeep Compass</td>
+                        <td><strong>XYZ-9876</strong></td>
+                        <td>14/04/2026</td>
+                        <td>18/04/2026</td>
+                        <td class="text-valor">R$ 980,00</td>
+                        <td><span class="badge status-pendente">Aguardando Retirada</span></td>
+                        <td style="text-align: center;">
+                            <a href="editar_aluguel.html" class="btn-edit-outline">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
