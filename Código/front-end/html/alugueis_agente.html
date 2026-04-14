@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Agente - Horizontes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylePedidos.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="../js/navbarAgente.js" defer></script>
+</head>
+<body>
+
+    <div class="content">
+        <div class="page-header">
+            <h2>Pedidos Pendentes</h2>
+            <p>Novas solicitações de aluguel aguardando sua revisão.</p>
+        </div>
+
+        <div class="table-container" style="margin-bottom: 50px;">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>CPF</th>
+                        <th>Veículo Solicitado</th>
+                        <th>Data Retirada</th>
+                        <th>Data Entrega</th>
+                        <th>Valor Total</th>
+                        <th style="text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana Clara</td>
+                        <td>123.456.789-00</td>
+                        <td>Toyota Corolla 2024</td>
+                        <td>15/04/2026</td>
+                        <td>20/04/2026</td>
+                        <td class="text-valor">R$ 900,00</td>
+                        <td class="actions-container">
+                            <button class="btn-approve">
+                                <i class="fas fa-check"></i> Aprovar
+                            </button>
+                            <button class="btn-reject">
+                                <i class="fas fa-times"></i> Recusar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="page-header">
+            <h2>Aluguéis Ativos</h2>
+            <p>Veículos que estão atualmente com clientes.</p>
+        </div>
+
+        <div class="table-container">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Veículo</th>
+                        <th>Cliente</th>
+                        <th>Entrega Prevista</th>
+                        <th>Status</th>
+                        <th style="text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jeep Compass 2023</td>
+                        <td>Vinícius Simões Viana</td>
+                        <td>18/04/2026</td>
+                        <td><span class="badge status-ativo">Em Trânsito</span></td>
+                        <td style="text-align: center;">
+                            <a href="editar_aluguel_agente.html" class="btn-edit-outline">
+                                <i class="fas fa-tools"></i> Gerenciar
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
