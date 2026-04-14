@@ -85,3 +85,46 @@
     color: var(--white);
     box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* Brilho azul suave */
 }
+
+/* Adicionar ao styleFrota.css se não houver */
+.btn-reject {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-reject:hover {
+    background-color: #dc2626;
+}
+
+.input-disabled {
+    background-color: var(--gray-light) !important;
+    cursor: not-allowed;
+    color: #64748b;
+}
+
+.btn-cancel {
+    background-color: #cbd5e1; /* Cinza suave da paleta */
+    color: var(--dark);         /* Texto no cinza escuro do sistema */
+    border: none;
+    padding: 10px 30px;        /* Mesma largura do botão Salvar para simetria */
+    border-radius: 30px;       /* Padrão pílula arredondado do Horizontes */
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-cancel:hover {
+    background-color: #94a3b8; /* Escurece levemente no hover */
+    transform: translateY(-1px);
+}

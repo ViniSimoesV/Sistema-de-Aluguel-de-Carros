@@ -53,7 +53,11 @@
                         <td>Automático</td>
                         <td><span class="badge status-ativo">Disponível</span></td>
                         <td style="text-align: center;">
-                            <a href="#" class="btn-edit-outline"><i class="fas fa-edit"></i></a>
+                            <a href="javascript:void(0)" 
+                            class="btn-edit-outline" 
+                            onclick="abrirModalEditar({matricula: '88291', marca: 'Toyota', modelo: 'Corolla', lugares: 5, combustivel: 'Flex', status: 'Disponível'})">
+                            <i class="fas fa-edit"></i>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
@@ -110,6 +114,67 @@
                 <br>
                 <div class="profile-actions">
                     <button type="submit" class="btn-main-perfil">Salvar Veículo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditarVeiculo" class="modal-detalhes">
+        <div class="modal-content-perfil">
+            <span class="close-modal" onclick="fecharModalEditar()">&times;</span>
+            <div class="page-header">
+                <h2>Editar Veículo</h2>
+                <p>Atualize as informações ou remova o veículo da frota.</p>
+            </div>
+            
+            <form id="formEditarVeiculo">
+                <div class="profile-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Identificação Técnica</h3> <br>
+                        <div class="field">
+                            <label>Matrícula</label>
+                            <input type="text" id="edit-matricula" readonly class="input-disabled">
+                        </div>
+                        <div class="input-group">
+                            <div class="field">
+                                <label>Marca</label>
+                                <input type="text" id="edit-marca" required>
+                            </div>
+                            <div class="field">
+                                <label>Modelo</label>
+                                <input type="text" id="edit-modelo" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="section-title">Especificações e Status</h3> <br>
+                        <div class="input-group">
+                            <div class="field"><label>Lugares</label><input type="number" id="edit-lugares" required></div>
+                            <div class="field">
+                                <label>Combustível</label>
+                                <select id="edit-combustivel" class="field-select">
+                                    <option>Flex</option><option>Gasolina</option><option>Diesel</option><option>Elétrico</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Status</label>
+                            <select id="edit-status" class="field-select">
+                                <option>Disponível</option><option>Em Manutenção</option><option>Alugado</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions" style="justify-content: space-between;">
+                    <button type="button" class="btn-reject" onclick="excluirVeiculo()">
+                        <i class="fas fa-trash"></i> Excluir Veículo
+                    </button>
+                    <div style="display: flex; gap: 15px;">
+                        <button type="button" class="btn-cancel" onclick="fecharModalEditar()">Cancelar</button>
+                        <button type="submit" class="btn-main-perfil">Salvar Alterações</button>
+                    </div>
                 </div>
             </form>
         </div>
