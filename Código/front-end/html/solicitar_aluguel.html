@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Aluguel - Horizontes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleSolicitar.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="../js/navbar.js" defer></script>
+</head>
+<body>
+
+    <div class="content">
+        <div class="page-header">
+            <h2>Solicitar Novo Aluguel</h2>
+            <p>Encontre o veículo ideal para sua próxima jornada.</p>
+        </div>
+
+        <div class="search-container">
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Local de Levantamento</label>
+                    <input type="text" placeholder="Cidade ou ponto de interesse">
+                </div>
+                <div class="filter-group">
+                    <label><i class="fas fa-calendar-alt"></i> Retirada e Devolução</label>
+                    <div class="date-input-group">
+                        <input type="date" title="Data Início">
+                        <input type="date" title="Data Fim">
+                    </div>
+                </div>
+                <button class="btn-search"><i class="fas fa-search"></i> Procurar</button>
+            </div>
+        </div>
+
+        <div class="available-cars">
+            <h3 class="section-title">Veículos Disponíveis</h3>
+            
+            <div class="car-card">
+                <div class="car-info">
+                    <h4>Toyota Corolla 2024</h4>
+                    <p class="car-detail">Placa: <strong>ABC-1234</strong> | Agente: Locadora Centro</p>
+                    <div class="car-tags">
+                        <span><i class="fas fa-gas-pump"></i> Flex</span>
+                        <span><i class="fas fa-cog"></i> Automático</span>
+                    </div>
+                </div>
+                <div class="car-pricing">
+                    <p class="price-label">Valor por dia</p>
+                    <p class="price-value">R$ 180,00</p>
+                    <button class="btn-main">Alugar Agora</button>
+                </div>
+            </div>
+
+            <div class="car-card">
+                <div class="car-info">
+                    <h4>Jeep Compass 2023</h4>
+                    <p class="car-detail">Placa: <strong>XYZ-9876</strong> | Agente: Horizonte Premium</p>
+                    <div class="car-tags">
+                        <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        <span><i class="fas fa-users"></i> 5 Lugares</span>
+                    </div>
+                </div>
+                <div class="car-pricing">
+                    <p class="price-label">Valor por dia</p>
+                    <p class="price-value">R$ 245,00</p>
+                    <button class="btn-main">Alugar Agora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
