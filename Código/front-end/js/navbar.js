@@ -6,7 +6,7 @@ function renderNavbar() {
             <li><a href="alugueis_cliente.html" class="active">Início</a></li>
             <li><a href="solicitar_aluguel.html">Solicitar Aluguel</a></li>
             <li><a href="editar_perfil.html">Editar Perfil</a></li>
-            <li><a href="index.html" class="btn-sair">Sair <i class="fas fa-sign-out-alt"></i></a></li>
+            <li><a href="../index.html" class="btn-sair">Sair <i class="fas fa-sign-out-alt"></i></a></li>
         </ul>
     </nav>
     `;
