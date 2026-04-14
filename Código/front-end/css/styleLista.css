@@ -60,3 +60,19 @@
     margin: 8px 0;
     font-size: 0.95rem;
 }
+
+/* styleTabela.css - Adições */
+.field-select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    background-color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    outline: none;
+}
+
+.field-select:focus {
+    border-color: var(--primary-light);
+}
