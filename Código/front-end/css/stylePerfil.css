@@ -1,0 +1,90 @@
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.form-section h3.section-title {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 5px;
+}
+
+.field {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* Inputs em modo leitura */
+.input-disabled, .input-enabled {
+    width: 100%;             /* Garante que ocupem todo o espaço disponível */
+    padding: 10px 15px;      /* Mantenha o padding idêntico em ambos */
+    border: 1px solid;       /* Reserve o espaço da borda sempre */
+    transition: all 0.2s;    /* Suaviza a transição de cor */
+}
+
+.input-disabled {
+    background-color: var(--gray-light) !important;
+    cursor: default;
+    border-color: transparent !important;
+    color: #64748b;
+}
+
+/* Inputs em modo edição */
+.input-enabled {
+    background-color: var(--white) !important;
+    border-color: var(--primary-light) !important;
+    color: var(--dark);
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-group .field {
+    flex: 1; /* Faz os campos dividirem o espaço igualmente */
+}
+
+.profile-actions {
+    border-top: 1px solid var(--gray-light);
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-cancel {
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    background-color: #cbd5e1;
+    color: var(--dark);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-main-perfil {
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .profile-grid { grid-template-columns: 1fr; }
+}

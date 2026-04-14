@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Cadastro - Horizontes </title>
+    <link rel="stylesheet" href="../front-end/css/styleLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container" id="container">
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Já tem uma conta?</h1>
+                    <p>Faça login com seus dados pessoais</p>
+                    <button class="ghost" id="signIn">Entrar</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Novo por aqui?</h1>
+                    <p>Insira seus dados e comece sua jornada conosco</p>
+                    <button class="ghost" id="signUp">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h2>Entrar</h2>
+                <br>
+                <span>ou use seu CPF/CNPJ</span>
+                <input type="text" placeholder="CPF ou CNPJ" />
+                <input type="password" placeholder="Senha" />
+                <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+                <button type="submit" class="btn-main">Entrar</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h2>Criar Conta</h2>
+                <div class="scrollable-form">
+                    <input type="text" placeholder="Nome Completo" />
+
+                    <div class="input-group">
+                        <input type="text" placeholder="CPF ou CNPJ" />
+                        <input type="text" placeholder="RG (Apenas se for CPF)" />
+                    </div>
+
+                    <input type="email" placeholder="E-mail" />
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Telefone" />
+                        <input type="date" placeholder="Data de Nascimento" title="Data de Nascimento" />
+                    </div>
+
+                    <input type="text" placeholder="Cargo (Trabalho)" />
+                    
+                    <p class="section-title">Endereço</p>
+                    <div class="input-group">
+                        <input type="text" placeholder="Rua" style="flex: 2;"/>
+                        <input type="text" placeholder="Nº" style="flex: 0.5;"/>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Complemento" />
+                        <input type="text" placeholder="Bairro" />
+                    </div>
+
+                    <input type="text" placeholder="Cidade" />
+                    
+                    <input type="password" placeholder="Senha" />
+                    
+                    <button type="submit" class="btn-main">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+</body>
+</html>

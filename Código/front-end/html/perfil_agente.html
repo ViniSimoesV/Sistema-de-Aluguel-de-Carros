@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Agente - Horizontes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylePerfil.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="../js/navbarAgente.js" defer></script>
+    <script src="../js/perfilAgente.js" defer></script>
+</head>
+<body>
+
+    <div class="content">
+        <div class="page-header">
+            <h2>Perfil do Agente</h2>
+            <p>Gerencie suas credenciais e informações institucionais.</p>
+        </div>
+
+        <div class="table-container">
+            <form id="formPerfil">
+                <div class="profile-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Identificação Institucional</h3>
+                        
+                        <div class="field">
+                            <label>Tipo de Agente</label>
+                            <select class="input-disabled" style="width: 100%; padding: 10px; border-radius: 8px;" disabled>
+                                <option value="banco">Instituição Financeira (Banco)</option>
+                                <option value="empresa" selected>Empresa de Locação</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Nome Institucional / Razão Social</label>
+                            <input type="text" value="Horizontes Rent a Car" readonly class="input-disabled">
+                        </div>
+                        
+                        <div class="field">
+                            <label>CNPJ</label>
+                            <input type="text" value="12.345.678/0001-99" readonly class="input-disabled">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Contato e Localização</h3>
+                        <div class="field">
+                            <label>E-mail Corporativo</label>
+                            <input type="email" value="contato@horizonteslocadora.com" readonly class="input-disabled">
+                        </div>
+                        <div class="field">
+                            <label>Telefone Comercial</label>
+                            <input type="text" value="(31) 3333-4444" readonly class="input-disabled">
+                        </div>
+                        <div class="field">
+                            <label>Cidade Sede</label>
+                            <input type="text" value="Belo Horizonte" readonly class="input-disabled">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                    <h3 class="section-title">Endereço</h3>
+                    <div class="input-group">
+                        <div class="field" style="flex: 3;">
+                            <label>Rua</label>
+                            <input type="text" value="Avenida dos Horizontes" readonly class="input-disabled">
+                        </div>
+                        <div class="field" style="flex: 1;">
+                            <label>Nº</label>
+                            <input type="text" value="1000" readonly class="input-disabled">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="field">
+                            <label>Bairro</label>
+                            <input type="text" value="Centro" readonly class="input-disabled">
+                        </div>
+                        <div class="field">
+                            <label>Complemento</label>
+                            <input type="text" value="Apto 101" readonly class="input-disabled">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Cidade</label>
+                        <input type="text" value="Belo Horizonte" readonly class="input-disabled">
+                    </div>
+                </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button type="button" id="btnEditar" class="btn-edit-outline">
+                        <i class="fas fa-user-shield"></i> Editar Dados do Agente
+                    </button>
+                    
+                    <div id="editGroup" style="display: none; gap: 15px;">
+                        <button type="button" id="btnCancelar" class="btn-cancel">Cancelar</button>
+                        <button type="submit" class="btn-main-perfil">Salvar Alterações</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

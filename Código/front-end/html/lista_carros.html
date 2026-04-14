@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Frota - Horizontes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleLista.css">
+    <link rel="stylesheet" href="../css/styleFrota.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="../js/navbarAgente.js" defer></script>
+    <script src="../js/modalCarro.js" defer></script>
+</head>
+<body>
+    <div class="content">
+        <div class="page-header">
+            <h2>Gestão de Frota</h2>
+            <p>Gerencie os veículos disponíveis para aluguel no sistema.</p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+            <button class="btn-main" onclick="abrirModalVeiculo()" style="padding: 10px 20px;">
+                <i class="fas fa-plus"></i> Novo Veículo
+            </button>
+        </div>
+
+        <div class="table-container">
+            
+
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Veículo (Marca/Modelo)</th>
+                        <th>Placa</th>
+                        <th>Matrícula</th>
+                        <th>Ano</th>
+                        <th>Lugares</th>
+                        <th>Câmbio</th>
+                        <th>Status</th>
+                        <th style="text-align: center;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Toyota Corolla</strong></td>
+                        <td>ABC-1234</td>
+                        <td>88291</td>
+                        <td>2024</td>
+                        <td>5</td>
+                        <td>Automático</td>
+                        <td><span class="badge status-ativo">Disponível</span></td>
+                        <td style="text-align: center;">
+                            <a href="javascript:void(0)" 
+                            class="btn-edit-outline" 
+                            onclick="abrirModalEditar({matricula: '88291', marca: 'Toyota', modelo: 'Corolla', lugares: 5, combustivel: 'Flex', status: 'Disponível'})">
+                            <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modalVeiculo" class="modal-detalhes">
+        <div class="modal-content-perfil">
+            <span class="close-modal" onclick="fecharModalVeiculo()">&times;</span>
+            <div class="page-header">
+                <h2>Cadastrar Novo Veículo</h2>
+            </div>
+            
+            <form id="formNovoVeiculo">
+                <div class="profile-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Identificação Técnica</h3> <br>
+                        <div class="field">
+                            <label>Matrícula</label>
+                            <input type="text" placeholder="Ex: 88291" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="field">
+                                <label>Marca</label>
+                                <input type="text" placeholder="Ex: Toyota" required>
+                            </div>
+                            <div class="field">
+                                <label>Modelo</label>
+                                <input type="text" placeholder="Ex: Corolla" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="section-title">Especificações e Status</h3> <br>
+                        <div class="input-group">
+                            <div class="field"><label>Lugares</label><input type="number" required></div>
+                            <div class="field">
+                                <label>Combustível</label>
+                                <select class="field-select"><option>Flex</option><option>Gasolina</option><option>Diesel</option><option>Elétrico</option></select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Câmbio</label>
+                            <select class="field-select"><option>Manual</option><option>Automático</option><option>Semi-Automático</option></select>
+                        </div>
+                        <div class="field">
+                            <label>Status Inicial</label>
+                            <select class="field-select"><option>Disponível</option><option>Em Manutenção</option><option>Alugado</option></select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="profile-actions">
+                    <button type="submit" class="btn-main-perfil">Salvar Veículo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditarVeiculo" class="modal-detalhes">
+        <div class="modal-content-perfil">
+            <span class="close-modal" onclick="fecharModalEditar()">&times;</span>
+            <div class="page-header">
+                <h2>Editar Veículo</h2>
+                <p>Atualize as informações ou remova o veículo da frota.</p>
+            </div>
+            
+            <form id="formEditarVeiculo">
+                <div class="profile-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Identificação Técnica</h3> <br>
+                        <div class="field">
+                            <label>Matrícula</label>
+                            <input type="text" id="edit-matricula" readonly class="input-disabled">
+                        </div>
+                        <div class="input-group">
+                            <div class="field">
+                                <label>Marca</label>
+                                <input type="text" id="edit-marca" required>
+                            </div>
+                            <div class="field">
+                                <label>Modelo</label>
+                                <input type="text" id="edit-modelo" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3 class="section-title">Especificações e Status</h3> <br>
+                        <div class="input-group">
+                            <div class="field"><label>Lugares</label><input type="number" id="edit-lugares" required></div>
+                            <div class="field">
+                                <label>Combustível</label>
+                                <select id="edit-combustivel" class="field-select">
+                                    <option>Flex</option><option>Gasolina</option><option>Diesel</option><option>Elétrico</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Status</label>
+                            <select id="edit-status" class="field-select">
+                                <option>Disponível</option><option>Em Manutenção</option><option>Alugado</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions" style="justify-content: space-between;">
+                    <button type="button" class="btn-reject" onclick="excluirVeiculo()">
+                        <i class="fas fa-trash"></i> Excluir Veículo
+                    </button>
+                    <div style="display: flex; gap: 15px;">
+                        <button type="button" class="btn-cancel" onclick="fecharModalEditar()">Cancelar</button>
+                        <button type="submit" class="btn-main-perfil">Salvar Alterações</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

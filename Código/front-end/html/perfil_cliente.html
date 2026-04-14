@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Horizontes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylePerfil.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="../js/navbar.js" defer></script>
+    <script src="../js/perfil.js" defer></script>
+</head>
+<body>
+
+    <div class="content">
+        <div class="page-header">
+            <h2>Meu Perfil</h2>
+            <p>Visualize ou atualize suas informações pessoais.</p>
+        </div>
+
+        <div class="table-container">
+            <form id="formPerfil">
+                <div class="profile-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Dados Pessoais</h3>
+                        <div class="input-group">
+                            <div class="field">
+                                <label>Nome Completo</label>
+                                <input type="text" value="Vinícius Simões Viana" readonly class="input-disabled">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="field">
+                                <label>CPF</label>
+                                <input type="text" value="123.456.789-00" readonly class="input-disabled">
+                            </div>
+                            <div class="field">
+                                <label>RG</label>
+                                <input type="text" value="MG-12.345.678" readonly class="input-disabled">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="field">
+                                <label>E-mail</label>
+                                <input type="email" value="vinicius@email.com" readonly class="input-disabled">
+                            </div>
+                            <div class="field">
+                                <label>Telefone</label>
+                                <input type="text" value="(31) 98888-8888" readonly class="input-disabled">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="field">
+                                <label>Data de Nascimento</label>
+                                <input type="date" value="2000-06-15" readonly class="input-disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Informações Profissionais</h3>
+                        <div class="field">
+                            <label>Cargo</label>
+                            <input type="text" value="Engenheiro de Software" readonly class="input-disabled">
+                        </div>
+                        <div class="field">
+                            <label>Entidade Empregadora</label>
+                            <input type="text" value="PUC Minas" readonly class="input-disabled">
+                        </div>
+                        <div class="field">
+                            <label>Rendimentos Auferidos (Mensal)</label>
+                            <input type="text" value="R$ 5.000,00" readonly class="input-disabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">Endereço</h3>
+                    <div class="input-group">
+                        <div class="field" style="flex: 3;">
+                            <label>Rua</label>
+                            <input type="text" value="Avenida dos Horizontes" readonly class="input-disabled">
+                        </div>
+                        <div class="field" style="flex: 1;">
+                            <label>Nº</label>
+                            <input type="text" value="1000" readonly class="input-disabled">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="field">
+                            <label>Bairro</label>
+                            <input type="text" value="Centro" readonly class="input-disabled">
+                        </div>
+                        <div class="field">
+                            <label>Complemento</label>
+                            <input type="text" value="Apto 101" readonly class="input-disabled">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Cidade</label>
+                        <input type="text" value="Belo Horizonte" readonly class="input-disabled">
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button type="button" id="btnEditar" class="btn-edit-outline">
+                        <i class="fas fa-user-edit"></i> Editar Perfil
+                    </button>
+                    
+                    <div id="editGroup" style="display: none; gap: 15px;">
+                        <button type="button" id="btnCancelar" class="btn-cancel">Cancelar</button>
+                        <button type="submit" class="btn-main-perfil">Salvar Alterações</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

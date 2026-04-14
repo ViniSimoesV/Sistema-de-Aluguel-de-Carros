@@ -1,0 +1,140 @@
+/* --- Estilos para Solicitação de Aluguel --- */
+
+.search-container {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.filter-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.date-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-search {
+    background-color: #facc15; /* Amarelo da referência para destaque */
+    color: var(--dark);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 45px;
+}
+
+.btn-search:hover { background-color: #eab308; }
+
+/* Cards de Carros */
+.car-card {
+    background-color: var(--white);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.car-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.car-info h4 { font-size: 1.2rem; color: var(--dark); margin-bottom: 5px; }
+.car-detail { font-size: 0.85rem; color: #64748b; margin-bottom: 10px; }
+
+.car-tags { display: flex; gap: 10px; }
+.car-tags span {
+    font-size: 0.75rem;
+    background: var(--bg-light);
+    color: var(--primary);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.car-pricing { text-align: right; border-left: 1px solid var(--gray-light); padding-left: 30px; }
+.price-label { font-size: 0.75rem; color: #64748b; }
+.price-value { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+
+/* Reutilizando btn-main definido anteriormente */
+.btn-main {
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.filter-group input {
+    width: 100%;
+    padding: 12px 20px;       /* Maior: mais espaço interno */
+    border-radius: 30px;      /* Mais arredondado: estilo "pílula" moderno */
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Efeito ao clicar no campo */
+.filter-group input:focus {
+    border-color: var(--primary);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); /* Brilho suave em volta */
+}
+
+/* Ajuste específico para o grupo de datas para manter o arredondamento */
+.date-input-group input {
+    flex: 1;
+    border-radius: 30px;      /* Mantém o padrão arredondado nas datas */
+}
+
+/* Ajuste no botão de procurar para combinar com os novos inputs */
+.btn-search {
+    background-color: #facc15;
+    color: var(--dark);
+    border: none;
+    padding: 0 35px;
+    border-radius: 30px;      /* Arredondado igual aos inputs */
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 48px;             /* Altura compatível com os novos inputs */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-search:hover {
+    background-color: #eab308;
+    transform: translateY(-1px);
+}
