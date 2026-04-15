@@ -48,8 +48,12 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
         corpoRequisicao.cidadeCliente = document.getElementById('cidade').value;
         corpoRequisicao.complementoCliente = document.getElementById('complemento').value;
         corpoRequisicao.emprego = document.getElementById('emprego').value;
-        corpoRequisicao.entidadeEmpregadora = document.getElementById('entidadeEmpregadora').value;
-        corpoRequisicao.renda = parseFloat(document.getElementById('renda').value);
+        
+        // 1. O DTO espera uma Lista de strings para entidadeEmpregadora
+        const entidade = document.getElementById('entidadeEmpregadora').value;
+        corpoRequisicao.entidadeEmpregadora = entidade ? [entidade] : []; 
+        
+        corpoRequisicao.rendimento = parseFloat(document.getElementById('rendimento').value) || 0;
     }
 
     fetch(endpoint, {
@@ -57,5 +61,18 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(corpoRequisicao)
     })
-    .then(response => response.ok ? alert('Sucesso!') : alert('Erro no cadastro'));
+    .then(async response => {
+        if (response.ok) {
+            alert('Sucesso! Usuário cadastrado.');
+            window.location.href = "index.html"; // Redireciona para o login
+        } else {
+            const errorData = await response.json();
+            console.error("Erro do servidor:", errorData);
+            alert('Erro no cadastro! Verifique os dados.');
+        }
+    })
+    .catch(error => {
+        console.error("Erro de rede:", error);
+        alert('Não foi possível conectar ao servidor.');
+    });
 });

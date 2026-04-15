@@ -1,6 +1,6 @@
 package com.example.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import io.micronaut.core.annotation.Introspected;
@@ -25,7 +25,7 @@ public class Cliente {
     private String senha;
 
     private String emprego;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     private String ruaCliente;
     private String numeroCliente;
@@ -48,7 +48,7 @@ public class Cliente {
     }
 
     // 2. CONSTRUTOR COM ARGUMENTOS (O que a Facade está tentando usar)
-    public Cliente(String cpf, String nome, String rg, String emprego, String telefone, Date data, String email, String senha) {
+    public Cliente(String cpf, String nome, String rg, String emprego, String telefone, LocalDate data, String email, String senha) {
         this.cpf = cpf;
         this.nome = nome;
         this.rg = rg;
@@ -83,8 +83,8 @@ public class Cliente {
     public String getRg() { return rg; }
     public void setRg(String rg) { this.rg = rg; }
 
-    public Date getDataNascimento() { return dataNascimento; }
-    public void setDataNascimento(Date data) { this.dataNascimento = data; }
+    public LocalDate getDataNascimento() { return dataNascimento; }
+    public void setDataNascimento(LocalDate data) { this.dataNascimento = data; }
 
     public String getTelefone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
