@@ -18,11 +18,20 @@ public class Cliente {
     private String cpf;
 
     private String nome;
-    private String endereco;
     private String rg;
-    private String emprego;
+
     private String telefone;
+    private String email;
+    private String senha;
+
+    private String emprego;
     private Date dataNascimento;
+
+    private String ruaCliente;
+    private String numeroCliente;
+    private String bairroCliente;
+    private String complementoCliente;
+    private String cidadeCliente;
 
 
     // Mapeados como coleções básicas (precisa de suporte do banco ou conversão)
@@ -39,20 +48,34 @@ public class Cliente {
     }
 
     // 2. CONSTRUTOR COM ARGUMENTOS (O que a Facade está tentando usar)
-    public Cliente(String cpf, String nome, String rg, String emprego, String telefone, Date data) {
+    public Cliente(String cpf, String nome, String rg, String emprego, String telefone, Date data, String email, String senha) {
         this.cpf = cpf;
         this.nome = nome;
         this.rg = rg;
         this.emprego = emprego;
         this.telefone = telefone;
         this.dataNascimento = data;
+        this.email = email;
+        this.senha = senha;
     }
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
 
-    public String getEndereco() { return endereco; }
-    public void setEndereco(String endereco) { this.endereco = endereco; }
+    public String getruaCliente() { return ruaCliente; }
+    public void setruaCliente(String ruaCliente) { this.ruaCliente = ruaCliente; }
+
+    public String getnumeroCliente() { return numeroCliente; }
+    public void setnumeroCliente(String numeroCliente) { this.numeroCliente = numeroCliente; }
+
+    public String getbairroCliente() { return bairroCliente; }
+    public void setbairroCliente(String bairroCliente) { this.bairroCliente = bairroCliente; }
+
+    public String getcomplementoCliente() { return complementoCliente; }
+    public void setcomplementoCliente(String complementoCliente) { this.complementoCliente = complementoCliente; }
+
+    public String getcidadeCliente() { return cidadeCliente; }
+    public void setcidadeCliente(String cidadeCliente) { this.cidadeCliente = cidadeCliente; }
 
     public String getCpf() { return cpf; }
     public void setCpf(String cpf) { this.cpf = cpf; }
@@ -65,6 +88,13 @@ public class Cliente {
 
     public String getTeleone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getSenha() { return senha; }
+    public void setSenha(String senha) { this.senha = senha; }
+
 
     public String getEmprego() { return emprego; }
     public void setEmprego(String emprego) { this.emprego = emprego; }

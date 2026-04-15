@@ -28,6 +28,10 @@ public class ClienteService {
         return clienteRepository.findById(cpf);
     }
 
+    public Optional<Cliente> buscarPorEmail(String email) {
+        return clienteRepository.findByEmail(email);
+    }
+
     public Cliente atualizar(Cliente cliente) {
         return clienteRepository.update(cliente);
     }

@@ -3,6 +3,7 @@ package com.example.Controller;
 import java.util.Date;
 
 import io.micronaut.core.annotation.Introspected;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 @Introspected
@@ -12,5 +13,7 @@ public record ClienteDTO(
     @NotBlank String rg,
     @NotBlank String emprego,
     @NotBlank String telefone,
-    @NotBlank Date dataNascimento
+    @NotBlank Date dataNascimento,
+    @NotBlank @Email String email, 
+    @NotBlank String senha
 ) {}

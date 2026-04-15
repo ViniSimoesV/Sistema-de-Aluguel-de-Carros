@@ -42,20 +42,28 @@ public class ClienteFacade {
 
     // --- MÉTODOS DE CLIENTE ---
     public ClienteDTO criarCliente(ClienteDTO dto) {
-        Cliente cliente = new Cliente(dto.cpf(), dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento());
+        Cliente cliente = new Cliente(dto.cpf(), dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento(), dto.email(), dto.senha());
+        cliente.setEmail(dto.email());
+        cliente.setSenha(dto.senha()); 
+        
         Cliente salvo = clienteService.salvar(cliente);
-        return new ClienteDTO(salvo.getCpf(), salvo.getNome(), salvo.getRg(), salvo.getEmprego(), salvo.getTeleone(), salvo.getDataNascimento());
+        
+        return new ClienteDTO(
+            salvo.getCpf(), salvo.getNome(), salvo.getRg(), 
+            salvo.getEmprego(), salvo.getTeleone(), salvo.getDataNascimento(),
+            salvo.getEmail(), null 
+        );
     }
 
     public ClienteDTO atualizarCliente(String cpf, ClienteDTO dto) {
-        Cliente cliente = new Cliente(cpf, dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento());
+        Cliente cliente = new Cliente(dto.cpf(), dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento(), dto.email(), dto.senha());
         Cliente atualizado = clienteService.atualizar(cliente);
-        return new ClienteDTO(atualizado.getCpf(), atualizado.getNome(), atualizado.getRg(), atualizado.getEmprego(), atualizado.getTeleone(), atualizado.getDataNascimento());
+        return new ClienteDTO(atualizado.getCpf(), atualizado.getNome(), atualizado.getRg(), atualizado.getEmprego(), atualizado.getTeleone(), atualizado.getDataNascimento(), atualizado.getEmail(), null);
     }
     
     public List<ClienteDTO> listarTodosClientes() {
         return StreamSupport.stream(clienteService.listarTodos().spliterator(), false)
-                .map(c -> new ClienteDTO(c.getCpf(), c.getNome(), c.getRg(), c.getEmprego(), c.getTeleone(), c.getDataNascimento()))
+                .map(c -> new ClienteDTO(c.getCpf(), c.getNome(), c.getRg(), c.getEmprego(), c.getTeleone(), c.getDataNascimento(), c.getEmail(), null))
                 .collect(Collectors.toList());
     }
 

@@ -16,10 +16,13 @@ public class Carro {
     private String placa;
     private String proprietario;
     private String cnpjAgente;
+    private Integer numLugares;     
+    private String tipoCombustivel; 
+    private String tipoCambio;
 
     public Carro() {}
 
-    public Carro(Long matricula, Integer ano, String marca, String modelo, String placa, String proprietario, String cnpj) {
+    public Carro(Long matricula, Integer ano, String marca, String modelo, String placa, String proprietario, String cnpj, Integer numLugares, String tipoCombustivel, String tipoCambio) {
         this.matricula = matricula;
         this.ano = ano;
         this.marca = marca;
@@ -27,6 +30,9 @@ public class Carro {
         this.placa = placa;
         this.proprietario = proprietario;
         this.cnpjAgente = cnpj;
+        this.numLugares = numLugares;
+        this.tipoCombustivel = tipoCombustivel;
+        this.tipoCambio = tipoCambio;
     }
 
     public Long getMatricula() { return matricula; }
@@ -43,6 +49,16 @@ public class Carro {
 
     public String getPlaca() { return placa; }
     public void setPlaca(String placa) { this.placa = placa; }
+
+    public Integer getNumLugares() { return numLugares; }
+    public void setNumLugares(Integer numLugares) { this.numLugares = numLugares; }
+
+    public String getTipoCombustivel() { return tipoCombustivel; }
+    public void setTipoCombustivel(String tipoCombustivel) { this.tipoCombustivel = tipoCombustivel; }
+
+    public String getTipoCambio() { return tipoCambio; }
+    public void setTipoCambio(String tipoCambio) { this.tipoCambio = tipoCambio; }
+
 
     public String getProprietario() { return proprietario; }
     public void setProprietario(String proprietario) { this.proprietario = proprietario; }

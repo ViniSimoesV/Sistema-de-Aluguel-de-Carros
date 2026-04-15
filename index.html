@@ -37,39 +37,43 @@
         </div>
 
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form id="formCadastro">
                 <h2>Criar Conta</h2>
                 <div class="scrollable-form">
-                    <input type="text" placeholder="Nome Completo" />
-
-                    <div class="input-group">
-                        <input type="text" placeholder="CPF ou CNPJ" />
-                        <input type="text" placeholder="RG (Apenas se for CPF)" />
-                    </div>
-
-                    <input type="email" placeholder="E-mail" />
-
-                    <div class="input-group">
-                        <input type="text" placeholder="Telefone" />
-                        <input type="date" placeholder="Data de Nascimento" title="Data de Nascimento" />
-                    </div>
-
-                    <input type="text" placeholder="Cargo (Trabalho)" />
+                    <input type="text" id="identificador" placeholder="CPF ou CNPJ" required />
                     
-                    <p class="section-title">Endereço</p>
-                    <div class="input-group">
-                        <input type="text" placeholder="Rua" style="flex: 2;"/>
-                        <input type="text" placeholder="Nº" style="flex: 0.5;"/>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" placeholder="Complemento" />
-                        <input type="text" placeholder="Bairro" />
+                    <input type="text" id="nome" placeholder="Nome Completo / Razão Social" required />
+                    <input type="email" id="email" placeholder="E-mail" required />
+                    <input type="text" id="telefone" placeholder="Telefone" required />
+
+                    <div id="camposCliente">
+                        <div class="input-group">
+                            <input type="text" id="rg" placeholder="RG" />
+                            <input type="date" id="dataNascimento" title="Data de Nascimento" />
+                        </div>
+                        <input type="text" id="cargo" placeholder="Cargo (Trabalho)" />
+                        
+                        <p class="section-title">Endereço Residencial</p>
+                        <div class="input-group">
+                            <input type="text" id="rua" placeholder="Rua" style="flex: 2;"/>
+                            <input type="text" id="numero" placeholder="Nº" style="flex: 0.5;"/>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="complemento" placeholder="Complemento" />
+                            <input type="text" id="bairro" placeholder="Bairro" />
+                        </div>
+                        <input type="text" id="cidade" placeholder="Cidade" />
                     </div>
 
-                    <input type="text" placeholder="Cidade" />
+                    <div id="camposAgente" style="display: none;">
+                        <input type="text" id="compe" placeholder="Código COMPE (Banco)" />
+                        <select id="tipoAgente" class="field-select" style="margin-bottom: 15px;">
+                            <option value="empresa">Empresa de Locação</option>
+                            <option value="banco">Instituição Financeira (Banco)</option>
+                        </select>
+                    </div>
                     
-                    <input type="password" placeholder="Senha" />
-                    
+                    <input type="password" id="senha" placeholder="Senha" required />
                     <button type="submit" class="btn-main">Cadastrar</button>
                 </div>
             </form>
@@ -89,5 +93,7 @@
             container.classList.remove("right-panel-active");
         });
     </script>
+
+    <script src="js/cadastro.js"></script>
 </body>
 </html>
