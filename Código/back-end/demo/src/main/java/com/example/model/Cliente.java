@@ -1,10 +1,12 @@
 package com.example.model;
 
+import java.util.Date;
 import java.util.List;
 
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.data.annotation.Id;
 import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.data.annotation.Relation;
 import jakarta.persistence.Column;
 
 @Introspected
@@ -19,14 +21,17 @@ public class Cliente {
     private String endereco;
     private String rg;
     private String emprego;
+    private String telefone;
+    private Date dataNascimento;
+
 
     // Mapeados como coleções básicas (precisa de suporte do banco ou conversão)
     private List<String> entidadeEmpregadora;
     private List<Double> rendimento;
 
     // Relacionamento com a classe Pedido (Um cliente tem vários pedidos)
-    //@Relation(value = Relation.Kind.ONE_TO_MANY, mappedBy = "cliente")
-    //private List<Pedido> listaPedido;
+    @Relation(value = Relation.Kind.ONE_TO_MANY, mappedBy = "cliente")
+    private List<Pedido> listaPedido;
 
     // Construtores, Getters e Setters
     // 1. CONSTRUTOR VAZIO (Obrigatório para o Micronaut/Hibernate)
@@ -34,11 +39,13 @@ public class Cliente {
     }
 
     // 2. CONSTRUTOR COM ARGUMENTOS (O que a Facade está tentando usar)
-    public Cliente(String cpf, String nome, String rg, String emprego) {
+    public Cliente(String cpf, String nome, String rg, String emprego, String telefone, Date data) {
         this.cpf = cpf;
         this.nome = nome;
         this.rg = rg;
         this.emprego = emprego;
+        this.telefone = telefone;
+        this.dataNascimento = data;
     }
 
     public String getNome() { return nome; }
@@ -53,6 +60,12 @@ public class Cliente {
     public String getRg() { return rg; }
     public void setRg(String rg) { this.rg = rg; }
 
+    public Date getDataNascimento() { return dataNascimento; }
+    public void setDataNascimento(Date data) { this.dataNascimento = data; }
+
+    public String getTeleone() { return telefone; }
+    public void setTelefone(String telefone) { this.telefone = telefone; }
+
     public String getEmprego() { return emprego; }
     public void setEmprego(String emprego) { this.emprego = emprego; }
 
@@ -62,6 +75,6 @@ public class Cliente {
     public List<Double> getRendimento() { return rendimento; }
     public void setRendimento(List<Double> rendimento) { this.rendimento = rendimento; }
 
-    //public List<Pedido> getListaPedido() { return listaPedido; }
-    //public void setListaPedido(List<Pedido> listaPedido) { this.listaPedido = listaPedido; }
+    public List<Pedido> getListaPedido() { return listaPedido; }
+    public void setListaPedido(List<Pedido> listaPedido) { this.listaPedido = listaPedido; }
 }

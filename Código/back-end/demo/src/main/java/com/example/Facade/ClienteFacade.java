@@ -42,20 +42,20 @@ public class ClienteFacade {
 
     // --- MÉTODOS DE CLIENTE ---
     public ClienteDTO criarCliente(ClienteDTO dto) {
-        Cliente cliente = new Cliente(dto.cpf(), dto.nome(), dto.rg(), dto.emprego());
+        Cliente cliente = new Cliente(dto.cpf(), dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento());
         Cliente salvo = clienteService.salvar(cliente);
-        return new ClienteDTO(salvo.getCpf(), salvo.getNome(), salvo.getRg(), salvo.getEmprego());
+        return new ClienteDTO(salvo.getCpf(), salvo.getNome(), salvo.getRg(), salvo.getEmprego(), salvo.getTeleone(), salvo.getDataNascimento());
     }
 
     public ClienteDTO atualizarCliente(String cpf, ClienteDTO dto) {
-        Cliente cliente = new Cliente(cpf, dto.nome(), dto.rg(), dto.emprego());
+        Cliente cliente = new Cliente(cpf, dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento());
         Cliente atualizado = clienteService.atualizar(cliente);
-        return new ClienteDTO(atualizado.getCpf(), atualizado.getNome(), atualizado.getRg(), atualizado.getEmprego());
+        return new ClienteDTO(atualizado.getCpf(), atualizado.getNome(), atualizado.getRg(), atualizado.getEmprego(), atualizado.getTeleone(), atualizado.getDataNascimento());
     }
     
     public List<ClienteDTO> listarTodosClientes() {
         return StreamSupport.stream(clienteService.listarTodos().spliterator(), false)
-                .map(c -> new ClienteDTO(c.getCpf(), c.getNome(), c.getRg(), c.getEmprego()))
+                .map(c -> new ClienteDTO(c.getCpf(), c.getNome(), c.getRg(), c.getEmprego(), c.getTeleone(), c.getDataNascimento()))
                 .collect(Collectors.toList());
     }
 
