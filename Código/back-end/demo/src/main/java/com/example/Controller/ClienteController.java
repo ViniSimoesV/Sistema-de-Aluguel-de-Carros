@@ -1,7 +1,7 @@
 package com.example.Controller;
 
 import java.util.List;
-
+import com.example.model.Cliente;
 import com.example.Facade.ClienteFacade;
 
 import io.micronaut.http.HttpStatus;
@@ -39,6 +39,11 @@ public class ClienteController {
     @Get
     public List<ClienteDTO> listar() {
         return clienteFacade.listarTodosClientes();
+    }
+
+    @Get("/{cpf}")
+    public Cliente buscarUm (@PathVariable String cpf){
+        return clienteFacade.buscarCliente(cpf);
     }
 
     @Delete("/{cpf}")

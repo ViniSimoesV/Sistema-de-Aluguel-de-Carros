@@ -43,31 +43,17 @@ public class ClienteFacade {
 
     // --- MÉTODOS DE CLIENTE ---
     public ClienteDTO criarCliente(ClienteDTO dto) {
-        Cliente cliente = new Cliente();
-        
-        // Campos básicos
-        cliente.setCpf(dto.cpf());
-        cliente.setNome(dto.nome());
-        cliente.setRg(dto.rg());
-        cliente.setTelefone(dto.telefone());
+        Cliente cliente = new Cliente(dto.cpf(), dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento(), dto.email(), dto.senha());
         cliente.setEmail(dto.email());
-        cliente.setSenha(dto.senha());
-        cliente.setEmprego(dto.emprego());
-        cliente.setDataNascimento(dto.dataNascimento());
-
-        // Campos endereço
-        cliente.setruaCliente(dto.ruaCliente());
-        cliente.setnumeroCliente(dto.numeroCliente());
-        cliente.setbairroCliente(dto.bairroCliente());
-        cliente.setcomplementoCliente(dto.complementoCliente());
-        cliente.setcidadeCliente(dto.cidadeCliente());
-
-        // Listas (Rendimento e Entidade)
-        cliente.setEntidadeEmpregadora(dto.entidadeEmpregadora());
-        cliente.setRendimento(dto.rendimento());
+        cliente.setSenha(dto.senha()); 
         
         Cliente salvo = clienteService.salvar(cliente);
-        return converterParaDTO(salvo);
+        
+        return new ClienteDTO(
+            salvo.getCpf(), salvo.getNome(), salvo.getRg(), 
+            salvo.getEmprego(), salvo.getTeleone(), salvo.getDataNascimento(),
+            salvo.getEmail(), null 
+        );
     }
 
     public ClienteDTO atualizarCliente(String cpf, ClienteDTO dto) {
@@ -167,6 +153,10 @@ public class ClienteFacade {
         // Métodos para buscar um único registro
     public Agente buscarAgente(String cnpj) {
         return agenteService.buscarPorCnpj(cnpj).orElse(null);
+    }
+
+    public Cliente buscarCliente (String cpf){
+        return clienteService.buscarPorCpf(cpf);
     }
 
     public Carro buscarCarro(Long matricula) {
