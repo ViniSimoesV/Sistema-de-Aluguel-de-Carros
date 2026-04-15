@@ -1,7 +1,6 @@
 package com.example.Facade;
 
 import java.util.List;
-import java.time.LocalDate;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -57,36 +56,14 @@ public class ClienteFacade {
     }
 
     public ClienteDTO atualizarCliente(String cpf, ClienteDTO dto) {
-        Cliente cliente = new Cliente();
-        
-        // Campos básicos
-        cliente.setCpf(dto.cpf());
-        cliente.setNome(dto.nome());
-        cliente.setRg(dto.rg());
-        cliente.setTelefone(dto.telefone());
-        cliente.setEmail(dto.email());
-        cliente.setSenha(dto.senha());
-        cliente.setEmprego(dto.emprego());
-        cliente.setDataNascimento(dto.dataNascimento());
-
-        // Campos endereço
-        cliente.setruaCliente(dto.ruaCliente());
-        cliente.setnumeroCliente(dto.numeroCliente());
-        cliente.setbairroCliente(dto.bairroCliente());
-        cliente.setcomplementoCliente(dto.complementoCliente());
-        cliente.setcidadeCliente(dto.cidadeCliente());
-
-        // Listas (Rendimento e Entidade)
-        cliente.setEntidadeEmpregadora(dto.entidadeEmpregadora());
-        cliente.setRendimento(dto.rendimento());
-        
+        Cliente cliente = new Cliente(dto.cpf(), dto.nome(), dto.rg(), dto.emprego(), dto.telefone(), dto.dataNascimento(), dto.email(), dto.senha());
         Cliente atualizado = clienteService.atualizar(cliente);
-        return converterParaDTO(atualizado);
+        return new ClienteDTO(atualizado.getCpf(), atualizado.getNome(), atualizado.getRg(), atualizado.getEmprego(), atualizado.getTeleone(), atualizado.getDataNascimento(), atualizado.getEmail(), null);
     }
     
     public List<ClienteDTO> listarTodosClientes() {
         return StreamSupport.stream(clienteService.listarTodos().spliterator(), false)
-                .map(c -> converterParaDTO(c))
+                .map(c -> new ClienteDTO(c.getCpf(), c.getNome(), c.getRg(), c.getEmprego(), c.getTeleone(), c.getDataNascimento(), c.getEmail(), null))
                 .collect(Collectors.toList());
     }
 
@@ -169,32 +146,5 @@ public class ClienteFacade {
 
     public Contrato buscarContrato(Long id) {
         return contratoService.buscarPorId(id).orElse(null);
-    }
-
-    // converter para DTO
-    private ClienteDTO converterParaDTO(Cliente cliente) {
-        return new ClienteDTO(
-            cliente.getCpf(),                // 1. @NotBlank String cpf
-            cliente.getNome(),               // 2. @NotBlank String nome
-            cliente.getRg(),                 // 3. @NotBlank String rg
-            cliente.getTelefone(),           // 4. @NotBlank String telefone
-            cliente.getEmail(),              // 5. @NotBlank @Email String email
-            cliente.getSenha(),              // 6. @NotBlank String senha
-            
-            // Perfil Profissional
-            cliente.getEmprego(),            // 7. @NotBlank String emprego
-            cliente.getEntidadeEmpregadora(),// 8. @Nullable List<String> entidadeEmpregadora
-            cliente.getRendimento(),         // 9. @Nullable Double rendimento
-            
-            // Data
-            cliente.getDataNascimento(),     // 10. @NotNull Date dataNascimento
-            
-            // Endereço
-            cliente.getruaCliente(),         // 11. @NotBlank String ruaCliente
-            cliente.getnumeroCliente(),      // 12. @NotBlank String numeroCliente
-            cliente.getbairroCliente(),      // 13. @NotBlank String bairroCliente
-            cliente.getcomplementoCliente(), // 14. @Nullable String complementoCliente
-            cliente.getcidadeCliente()
-        );
     }
 }
