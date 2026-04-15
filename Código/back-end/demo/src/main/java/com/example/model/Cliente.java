@@ -36,7 +36,7 @@ public class Cliente {
 
     // Mapeados como coleções básicas (precisa de suporte do banco ou conversão)
     private List<String> entidadeEmpregadora;
-    private Double rendimento;
+    private List<Double> rendimento;
 
     // Relacionamento com a classe Pedido (Um cliente tem vários pedidos)
     @Relation(value = Relation.Kind.ONE_TO_MANY, mappedBy = "cliente")
@@ -86,7 +86,7 @@ public class Cliente {
     public Date getDataNascimento() { return dataNascimento; }
     public void setDataNascimento(Date data) { this.dataNascimento = data; }
 
-    public String getTelefone() { return telefone; }
+    public String getTeleone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
 
     public String getEmail() { return email; }
@@ -102,8 +102,8 @@ public class Cliente {
     public List<String> getEntidadeEmpregadora() { return entidadeEmpregadora; }
     public void setEntidadeEmpregadora(List<String> entidadeEmpregadora) { this.entidadeEmpregadora = entidadeEmpregadora; }
 
-    public Double getRendimento() { return rendimento; }
-    public void setRendimento(Double rendimento) { this.rendimento = rendimento; }
+    public List<Double> getRendimento() { return rendimento; }
+    public void setRendimento(List<Double> rendimento) { this.rendimento = rendimento; }
 
     public List<Pedido> getListaPedido() { return listaPedido; }
     public void setListaPedido(List<Pedido> listaPedido) { this.listaPedido = listaPedido; }
