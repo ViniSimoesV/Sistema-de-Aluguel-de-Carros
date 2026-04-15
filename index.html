@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Cadastro - Horizontes </title>
-    <link rel="stylesheet" href="../Código/front-end/css/styleLogin.css">
+
+    <link rel="stylesheet" href="/Código/front-end/css/styleLogin.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="/Código/front-end/js/cadastro.js"></script>
 </head>
 <body>
     <div class="login-container" id="container">
@@ -49,10 +53,15 @@
                     <div id="camposCliente">
                         <div class="input-group">
                             <input type="text" id="rg" placeholder="RG" />
-                            <input type="date" id="dataNascimento" title="Data de Nascimento" />
+                            <input type="date" id="dataNascimento" title="Data de Nascimento" placeholder="Data de Nascimento" />
                         </div>
-                        <input type="text" id="cargo" placeholder="Cargo (Trabalho)" />
-                        
+                        <div class="input-group">   
+                            <input type="text" id="emprego" placeholder="Emprego" />
+                            <input type="number" id="renda" placeholder="Renda Mensal" />
+                        </div>
+
+                        <input type="text" id="entidadeEmpregadora" placeholder="Entidade Empregadora" />
+                                            
                         <p class="section-title">Endereço Residencial</p>
                         <div class="input-group">
                             <input type="text" id="rua" placeholder="Rua" style="flex: 2;"/>
@@ -73,6 +82,7 @@
                         </select>
                     </div>
                     
+                    <p class="section-title">Senha</p>
                     <input type="password" id="senha" placeholder="Senha" required />
                     <button type="submit" class="btn-main">Cadastrar</button>
                 </div>
@@ -94,6 +104,6 @@
         });
     </script>
 
-    <script src="js/cadastro.js"></script>
+    
 </body>
 </html>

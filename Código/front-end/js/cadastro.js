@@ -41,10 +41,15 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
     } else {
         corpoRequisicao.cpf = valorId;
         corpoRequisicao.rg = document.getElementById('rg').value;
+        corpoRequisicao.dataNascimento = document.getElementById('dataNascimento').value;
         corpoRequisicao.ruaCliente = document.getElementById('rua').value;
+        corpoRequisicao.numeroCliente = document.getElementById('numero').value;
         corpoRequisicao.bairroCliente = document.getElementById('bairro').value;
         corpoRequisicao.cidadeCliente = document.getElementById('cidade').value;
         corpoRequisicao.complementoCliente = document.getElementById('complemento').value;
+        corpoRequisicao.emprego = document.getElementById('emprego').value;
+        corpoRequisicao.entidadeEmpregadora = document.getElementById('entidadeEmpregadora').value;
+        corpoRequisicao.renda = parseFloat(document.getElementById('renda').value);
     }
 
     fetch(endpoint, {
