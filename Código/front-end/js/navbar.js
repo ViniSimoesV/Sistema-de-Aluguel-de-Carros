@@ -11,7 +11,7 @@ function renderNavbar() {
             <li><a href="alugueis_cliente.html">Início</a></li>
             <li><a href="solicitar_aluguel.html">Solicitar Aluguel</a></li>
             <li><a href="perfil_cliente.html">Perfil</a></li> 
-            <li><a href="../index.html" class="btn-sair">Sair <i class="fas fa-sign-out-alt"></i></a></li>
+            <li><a href="../../../index.html" class="btn-sair">Sair <i class="fas fa-sign-out-alt"></i></a></li>
         </ul>
     </nav>
     `;
