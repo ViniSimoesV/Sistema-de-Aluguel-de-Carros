@@ -15,13 +15,11 @@
     <script src="../js/perfil.js" defer></script>
 </head>
 <body>
-
     <div class="content">
         <div class="page-header">
             <h2>Meu Perfil</h2>
             <p>Visualize ou atualize suas informações pessoais.</p>
         </div>
-
         <div class="table-container">
             <form id="formPerfil">
                 <div class="profile-grid">
@@ -30,33 +28,33 @@
                         <div class="input-group">
                             <div class="field">
                                 <label>Nome Completo</label>
-                                <input type="text" value="Vinícius Simões Viana" readonly class="input-disabled">
+                                <input type="text" id="perfil-nome" readonly class="input-disabled">
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="field">
                                 <label>CPF</label>
-                                <input type="text" value="123.456.789-00" readonly class="input-disabled">
+                                <input type="text" id="perfil-cpf" readonly class="input-disabled">
                             </div>
                             <div class="field">
                                 <label>RG</label>
-                                <input type="text" value="MG-12.345.678" readonly class="input-disabled">
+                                <input type="text" id="perfil-rg" readonly class="input-disabled">
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="field">
                                 <label>E-mail</label>
-                                <input type="email" value="vinicius@email.com" readonly class="input-disabled">
+                                <input type="email" id="perfil-email" readonly class="input-disabled">
                             </div>
                             <div class="field">
                                 <label>Telefone</label>
-                                <input type="text" value="(31) 98888-8888" readonly class="input-disabled">
+                                <input type="text" id="perfil-telefone" readonly class="input-disabled">
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="field">
                                 <label>Data de Nascimento</label>
-                                <input type="date" value="2000-06-15" readonly class="input-disabled">
+                                <input type="date" id="perfil-dataNascimento" readonly class="input-disabled">
                             </div>
                         </div>
                     </div>
@@ -64,16 +62,12 @@
                     <div class="form-section">
                         <h3 class="section-title">Informações Profissionais</h3>
                         <div class="field">
-                            <label>Cargo</label>
-                            <input type="text" value="Engenheiro de Software" readonly class="input-disabled">
+                            <label>Cargo / Emprego</label>
+                            <input type="text" id="perfil-emprego" readonly class="input-disabled">
                         </div>
                         <div class="field">
                             <label>Entidade Empregadora</label>
-                            <input type="text" value="PUC Minas" readonly class="input-disabled">
-                        </div>
-                        <div class="field">
-                            <label>Rendimentos Auferidos (Mensal)</label>
-                            <input type="text" value="R$ 5.000,00" readonly class="input-disabled">
+                            <input type="text" id="perfil-entidade" value="PUC Minas" readonly class="input-disabled">
                         </div>
                     </div>
                 </div>
@@ -83,26 +77,26 @@
                     <div class="input-group">
                         <div class="field" style="flex: 3;">
                             <label>Rua</label>
-                            <input type="text" value="Avenida dos Horizontes" readonly class="input-disabled">
+                            <input type="text" id="perfil-ruaCliente" readonly class="input-disabled">
                         </div>
                         <div class="field" style="flex: 1;">
                             <label>Nº</label>
-                            <input type="text" value="1000" readonly class="input-disabled">
+                            <input type="text" id="perfil-numeroCliente" readonly class="input-disabled">
                         </div>
                     </div>
                     <div class="input-group">
                         <div class="field">
                             <label>Bairro</label>
-                            <input type="text" value="Centro" readonly class="input-disabled">
+                            <input type="text" id="perfil-bairroCliente" readonly class="input-disabled">
                         </div>
                         <div class="field">
                             <label>Complemento</label>
-                            <input type="text" value="Apto 101" readonly class="input-disabled">
+                            <input type="text" id="perfil-complementoCliente" readonly class="input-disabled">
                         </div>
                     </div>
                     <div class="field">
                         <label>Cidade</label>
-                        <input type="text" value="Belo Horizonte" readonly class="input-disabled">
+                        <input type="text" id="perfil-cidadeCliente" readonly class="input-disabled">
                     </div>
                 </div>
 
@@ -119,6 +113,5 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>

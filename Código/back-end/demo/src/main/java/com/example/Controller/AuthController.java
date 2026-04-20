@@ -1,6 +1,7 @@
-package com.example.Controller;
+package com.example.controller;
 
-import com.example.Service.ClienteService;
+import com.example.service.ClienteService;
+
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.annotation.Body;

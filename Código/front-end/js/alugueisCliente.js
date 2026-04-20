@@ -51,3 +51,15 @@ async function carregarAlugueisDoCliente(cpfAtual) {
         alert('Erro ao carregar a lista de aluguéis.');
     }
 }
+
+// Dispara o carregamento assim que o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+    const cpfLogado = localStorage.getItem('cpfLogado');
+
+    if (cpfLogado) {
+        carregarAlugueisDoCliente(cpfLogado);
+    } else {
+        console.error('Nenhum CPF encontrado no localStorage. Redirecionando...');
+        window.location.href = 'index.html';
+    }
+});

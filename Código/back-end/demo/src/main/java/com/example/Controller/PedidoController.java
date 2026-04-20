@@ -1,9 +1,8 @@
-package com.example.Controller;
+package com.example.controller;
 
 import java.util.List;
 
-import com.example.Facade.ClienteFacade;
-import com.example.model.Contrato;
+import com.example.facade.ClienteFacade;
 import com.example.model.Pedido;
 
 import io.micronaut.http.HttpStatus;

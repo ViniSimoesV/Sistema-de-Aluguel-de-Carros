@@ -1,10 +1,19 @@
-package com.example.Controller;
+package com.example.controller;
 
-import com.example.Facade.ClienteFacade;
-import com.example.model.Agente;
-import io.micronaut.http.annotation.*;
-import io.micronaut.http.HttpStatus;
 import java.util.List;
+
+import com.example.facade.ClienteFacade;
+import com.example.model.Agente;
+
+import io.micronaut.http.HttpStatus;
+import io.micronaut.http.annotation.Body;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Delete;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
+import io.micronaut.http.annotation.Post;
+import io.micronaut.http.annotation.Put;
+import io.micronaut.http.annotation.Status;
 
 @Controller("/agentes")
 public class AgenteController {

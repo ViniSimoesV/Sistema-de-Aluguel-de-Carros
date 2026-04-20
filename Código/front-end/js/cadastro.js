@@ -76,3 +76,57 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
         alert('Não foi possível conectar ao servidor.');
     });
 });
+
+document.querySelector('.sign-in-container form').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Impede o recarregamento da página
+
+    // Captura os inputs
+    const inputs = e.target.querySelectorAll('input');
+    const identificador = inputs[0].value.replace(/\D/g, ''); // Remove pontos e traços
+    const senhaDigitada = inputs[1].value;
+
+    if (!identificador || !senhaDigitada) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    try {
+        // 1. Distinguir entre Cliente (CPF) e Agente (CNPJ) pelo comprimento
+        // CPF possui 11 dígitos, CNPJ possui 14.
+        const ehCliente = identificador.length <= 11;
+        const endpoint = ehCliente ? `clientes/${identificador}` : `agentes/${identificador}`;
+        
+        // 2. Tenta buscar o usuário no banco
+        const response = await fetch(`http://localhost:8080/${endpoint}`);
+
+        if (response.ok) {
+            const usuario = await response.json();
+
+            // 3. Verificação da senha (comparando com o campo 'senha' da sua Model)
+            if (usuario.senha === senhaDigitada) {
+                
+                // 4. Armazena no LocalStorage
+                if (ehCliente) {
+                    localStorage.setItem('cpfLogado', identificador);
+                    localStorage.setItem('tipoUsuario', 'cliente');
+                    window.location.href = 'perfil_cliente.html'; // Redireciona
+                } else {
+                    localStorage.setItem('cnpjLogado', identificador);
+                    localStorage.setItem('tipoUsuario', 'agente');
+                    window.location.href = 'perfil_agente.html'; // Redireciona
+                }
+
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            }
+        } else if (response.status === 404) {
+            alert("Usuário não encontrado. Verifique o CPF/CNPJ digitado.");
+        } else {
+            throw new Error("Erro no servidor.");
+        }
+
+    } catch (error) {
+        console.error("Erro ao realizar login:", error);
+        alert("Ocorreu um erro ao tentar entrar. Verifique sua conexão.");
+    }
+});

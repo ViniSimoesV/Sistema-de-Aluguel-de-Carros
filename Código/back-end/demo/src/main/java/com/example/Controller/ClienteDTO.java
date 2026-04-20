@@ -1,6 +1,6 @@
-package com.example.Controller;
+package com.example.controller;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import io.micronaut.core.annotation.Introspected;
 import jakarta.validation.constraints.Email;
@@ -13,7 +13,7 @@ public record ClienteDTO(
     @NotBlank String rg,
     @NotBlank String emprego,
     @NotBlank String telefone,
-    @NotBlank Date dataNascimento,
+    @NotBlank LocalDate dataNascimento,
     @NotBlank @Email String email, 
     @NotBlank String senha
 ) {}

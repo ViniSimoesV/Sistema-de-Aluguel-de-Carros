@@ -1,9 +1,11 @@
-package com.example.Service;
+package com.example.service;
+
+import java.util.Optional;
 
 import com.example.model.Contrato;
 import com.example.repository.ContratoRepository;
+
 import jakarta.inject.Singleton;
-import java.util.Optional;
 
 @Singleton
 public class ContratoService {

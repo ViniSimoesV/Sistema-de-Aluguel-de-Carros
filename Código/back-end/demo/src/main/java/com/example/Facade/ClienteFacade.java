@@ -1,20 +1,21 @@
-package com.example.Facade;
+package com.example.facade;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import com.example.Controller.ClienteDTO;
-import com.example.Service.AgenteService;
-import com.example.Service.CarroService;
-import com.example.Service.ClienteService;
-import com.example.Service.ContratoService;
-import com.example.Service.PedidoService;
+import com.example.controller.ClienteDTO;
 import com.example.model.Agente;
 import com.example.model.Carro;
 import com.example.model.Cliente;
 import com.example.model.Contrato;
 import com.example.model.Pedido;
+import com.example.service.AgenteService;
+import com.example.service.CarroService;
+import com.example.service.ClienteService;
+import com.example.service.ContratoService;
+import com.example.service.PedidoService;
 
 import jakarta.inject.Singleton;
 
@@ -132,7 +133,7 @@ public class ClienteFacade {
         return agenteService.buscarPorCnpj(cnpj).orElse(null);
     }
 
-    public Cliente buscarCliente (String cpf){
+    public Optional<Cliente> buscarCliente (String cpf){
         return clienteService.buscarPorCpf(cpf);
     }
 

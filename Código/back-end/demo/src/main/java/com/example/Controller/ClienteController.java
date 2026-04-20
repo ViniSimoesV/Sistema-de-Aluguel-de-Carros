@@ -1,8 +1,10 @@
-package com.example.Controller;
+package com.example.controller;
 
 import java.util.List;
+import java.util.Optional;
+
+import com.example.facade.ClienteFacade;
 import com.example.model.Cliente;
-import com.example.Facade.ClienteFacade;
 
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.annotation.Body;
@@ -42,7 +44,7 @@ public class ClienteController {
     }
 
     @Get("/{cpf}")
-    public Cliente buscarUm (@PathVariable String cpf){
+    public Optional<Cliente> buscarUm (@PathVariable String cpf){
         return clienteFacade.buscarCliente(cpf);
     }
 

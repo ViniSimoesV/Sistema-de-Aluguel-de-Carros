@@ -1,4 +1,4 @@
-package com.example.Service;
+package com.example.service;
 
 import com.example.model.Agente;
 import com.example.repository.AgenteRepository;

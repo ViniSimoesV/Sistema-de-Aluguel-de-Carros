@@ -3,14 +3,21 @@ package com.example.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.micronaut.core.annotation.Introspected;
-import io.micronaut.data.annotation.Id;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import io.micronaut.data.annotation.MappedEntity;
 import io.micronaut.data.annotation.Relation;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Introspected
-@MappedEntity
+@Entity 
+@Table(name = "cliente") 
+@MappedEntity(value = "cliente")
 public class Cliente {
 
     @Id
@@ -39,7 +46,8 @@ public class Cliente {
     private List<Double> rendimento;
 
     // Relacionamento com a classe Pedido (Um cliente tem vários pedidos)
-    @Relation(value = Relation.Kind.ONE_TO_MANY, mappedBy = "cliente")
+    @JsonIgnore
+    @OneToMany(mappedBy = "cpfCliente")
     private List<Pedido> listaPedido;
 
     // Construtores, Getters e Setters
