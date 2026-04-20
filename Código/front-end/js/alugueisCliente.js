@@ -60,6 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         carregarAlugueisDoCliente(cpfLogado);
     } else {
         console.error('Nenhum CPF encontrado no localStorage. Redirecionando...');
-        window.location.href = 'index.html';
+        //window.location.href = 'index.html';
     }
 });

@@ -10,7 +10,7 @@ let senhaUsuario = ""; // Guardamos a senha para não perdê-la no PUT
 async function carregarPerfil() {
     const cpf = localStorage.getItem('cpfLogado');
     if (!cpf) {
-        window.location.href = '../html/index.html';
+        //window.location.href = '../html/index.html';
         return;
     }
 
