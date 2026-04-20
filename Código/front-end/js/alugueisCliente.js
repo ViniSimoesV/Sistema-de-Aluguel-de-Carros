@@ -12,7 +12,8 @@ async function carregarAlugueisDoCliente(cpfAtual) {
         // 2. Filtra os pedidos pelo CPF do cliente logado
         const pedidosFiltrados = todosPedidos.filter(p => p.cpfCliente === cpfAtual);
 
-        const tbody = document.querySelector('#tabelaAluguel').nextElementSibling; // Pega o <tbody>
+        //const tbody = document.querySelector('tabelaAluguel').nextElementSibling;
+        const tbody = document.querySelector('.modern-table tbody');
         tbody.innerHTML = '<tr><td colspan="7">Carregando dados dos veículos...</td></tr>';
 
         // 3. Para cada pedido, busca os detalhes do carro (async)
@@ -31,8 +32,8 @@ async function carregarAlugueisDoCliente(cpfAtual) {
                         <td>R$ ${pedido.valor.toFixed(2)}</td>
                         <td><span class="badge">${pedido.status}</span></td>
                         <td style="text-align: center;">
-                            <button class="btn-action" onclick="detalharPedido(${pedido.idPedido})">
-                                <i class="fas fa-eye"></i>
+                            <button type="button" onclick="abrirModalEditar(${pedido.idPedido})" class="btn-edit-outline">
+                                <i class="fas fa-edit"></i> Editar
                             </button>
                         </td>
                     </tr>`;
@@ -63,3 +64,33 @@ document.addEventListener('DOMContentLoaded', () => {
         //window.location.href = 'index.html';
     }
 });
+
+// Seletores
+const modal = document.getElementById('modalEditar');
+const btnFechar = document.getElementById('btnFecharModal');
+const btnCancelar = document.getElementById('btnCancelar');
+
+// Função para abrir a modal e carregar dados
+async function abrirModalEditar(idPedido) {
+    modal.style.display = 'block';
+    try {
+        const res = await fetch(`${apiPedidos}/${idPedido}`);
+        const pedido = await res.json();
+        
+        document.getElementById('editIdPedido').value = pedido.idPedido;
+        document.getElementById('editDataInicio').value = pedido.dataInicio.split('T')[0];
+        document.getElementById('editDataFim').value = pedido.dataFim.split('T')[0];
+        
+        modal.style.display = 'block';
+    } catch (error) {
+        console.error("Erro ao carregar pedido para edição:", error);
+    }
+}
+
+if (btnCancelar) {
+    btnCancelar.onclick = () => modal.style.display = 'none';
+}
+
+// Fechar modal
+btnFechar.onclick = () => modal.style.display = 'none';
+window.onclick = (event) => { if (event.target == modal) modal.style.display = 'none'; }

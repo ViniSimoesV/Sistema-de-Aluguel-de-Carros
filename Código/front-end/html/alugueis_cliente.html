@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Aluguéis - Horizontes</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/navbar.css">
     
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <script src="../js/navbar.js" defer></script>
+    <script src="../js/alugueisCliente.js" defer></script>
 </head>
 <body>
 
@@ -42,9 +43,9 @@
                         <td class="text-valor">R$ 1.450,00</td>
                         <td><span class="badge status-ativo">Ativo</span></td>
                         <td style="text-align: center;">
-                            <a href="editar_aluguel.html" title="Solicitar Alteração" class="btn-edit-outline">
+                            <button type="button" onclick="abrirModalEditar(1)" class="btn-edit-outline">
                                 <i class="fas fa-edit"></i> Editar
-                            </a>
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -55,13 +56,38 @@
                         <td class="text-valor">R$ 980,00</td>
                         <td><span class="badge status-pendente">Aguardando Retirada</span></td>
                         <td style="text-align: center;">
-                            <a href="editar_aluguel.html" class="btn-edit-outline">
+                            <button type="button" onclick="abrirModalEditar(1)" class="btn-edit-outline">
                                 <i class="fas fa-edit"></i> Editar
-                            </a>
+                            </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Aluguel</h3>
+                <span class="close-modal" id="btnFecharModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="formEditarAluguel">
+                    <input type="hidden" id="editIdPedido">
+                    <label>Data de Retirada</label>
+                    <input type="date" id="editDataInicio">
+                    
+                    <label>Previsão de Entrega</label>
+                    <input type="date" id="editDataFim">
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn-edit-outline" id="btnCancelar">Cancelar</button>
+                        <button type="submit" class="btn-main" id="btnCSalvar" style="margin-top:0">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
