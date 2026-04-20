@@ -1,4 +1,9 @@
 function renderNavbar() {
+    const fontLink = document.createElement('link');
+    fontLink.rel = 'stylesheet';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap';
+    document.head.appendChild(fontLink);
+    
     const navHTML = `
     <nav class="navbar">
         <a class="nav-logo">HORIZONTES</a>

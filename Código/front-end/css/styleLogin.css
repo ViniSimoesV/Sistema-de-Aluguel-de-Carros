@@ -11,7 +11,9 @@
 * { box-sizing: border-box; }
 
 body {
-    background: var(--bg-light); /* Aplicado fundo azul claro */
+    /*background: var(--bg-light);  Aplicado fundo azul claro */
+    background-image: url('../img/carroHB20.jpg');
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +30,8 @@ a { color: var(--dark); font-size: 14px; text-decoration: none; margin: 15px 0; 
 a:hover { color: var(--primary); }
 
 .login-container {
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(8px);
     border-radius: 15px;
     box-shadow: 0 14px 28px rgba(31, 41, 55, 0.1), 0 10px 10px rgba(31, 41, 55, 0.1);
     position: relative;
@@ -48,7 +51,11 @@ a:hover { color: var(--primary); }
 .sign-in-container { left: 0; width: 50%; z-index: 2; }
 .sign-up-container { left: 0; width: 50%; opacity: 0; z-index: 1; }
 
-.login-container.right-panel-active .sign-in-container { transform: translateX(100%); }
+.login-container.right-panel-active .sign-in-container { 
+    transform: translateX(100%);
+    opacity: 0;
+}
+
 .login-container.right-panel-active .sign-up-container {
     transform: translateX(100%);
     opacity: 1;
@@ -56,10 +63,17 @@ a:hover { color: var(--primary); }
     animation: show 0.6s;
 }
 
+.logo {
+    font-family: 'Racing Sans One', cursive;
+    font-size: 4.5rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
 @keyframes show { 0%, 49.99% { opacity: 0; z-index: 1; } 50%, 100% { opacity: 1; z-index: 5; } }
 
 form {
-    background-color: var(--white);
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,12 +92,12 @@ form {
 
 /* Scrollbar personalizada com as cores da paleta */
 .scrollable-form::-webkit-scrollbar { width: 5px; }
-.scrollable-form::-webkit-scrollbar-thumb { background: var(--bg-light); border-radius: 10px; }
+.scrollable-form::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
 .input-group { display: flex; gap: 10px; width: 100%; }
 
 input {
-    background-color: #f3f4f6; /* Cinza bem suave para contraste no branco */
+    background-color: rgb(243, 244, 246, 0.6);
     border: 1px solid transparent;
     padding: 10px 15px;
     margin: 6px 0;
@@ -122,7 +136,7 @@ input:focus {
 .btn-main:active { transform: scale(0.95); }
 
 button.ghost {
-    background-color: transparent;
+    background-color: #283649;
     border-color: var(--white);
     border-radius: 20px;
     color: var(--white);
@@ -152,8 +166,8 @@ button.ghost:hover {
 .login-container.right-panel-active .overlay-container { transform: translateX(-100%); }
 
 .overlay {
-    background: var(--dark); 
-    background: linear-gradient(to right, #111827, var(--dark));
+    background: rgba(31, 41, 55, 0.65);
+    background: linear-gradient(to right, rgba(17, 24, 39, 0.85), rgba(31, 41, 55, 0.85));
     color: var(--white);
     position: relative;
     left: -100%;
@@ -189,7 +203,7 @@ button.ghost:hover {
     font-weight: bold;
     margin: 10px 0 5px 0;
     font-size: 0.9rem;
-    color: var(--primary); /* Título das seções em azul */
+    color: var(--dark); /* Título das seções em azul */
     text-align: left;
     width: 100%;
 }
