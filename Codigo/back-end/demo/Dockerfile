@@ -22,8 +22,8 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # O Gradle do Micronaut coloca o JAR em build/libs/
-# Usamos o wildcard *.jar para pegar o arquivo gerado (geralmente o shadowJar ou o AllJar)
-COPY --from=build /app/build/libs/*.jar app.jar
+# *.jar para pegar o arquivo gerado (geralmente o shadowJar ou o AllJar)
+COPY --from=build /app/build/libs/*-all.jar app.jar
 
 EXPOSE 8080
 
