@@ -42,6 +42,9 @@ body {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modern-table {
@@ -109,4 +112,18 @@ body {
 .btn-edit-outline:hover {
     background-color: var(--primary);
     color: var(--white);
+}
+
+
+@media (max-width: 768px) {
+    .modern-table thead {
+        display: none; /* Esconde o cabeçalho em telas muito pequenas (opcional) */
+    }
+    
+    .modern-table td {
+        display: block; /* Transforma cada célula em um bloco empilhado */
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
 }

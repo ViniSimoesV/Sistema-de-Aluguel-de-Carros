@@ -226,3 +226,25 @@ button.ghost:hover {
     color: var(--primary);
     border-color: var(--primary);
 }
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 95%;
+        min-height: 600px;
+        height: auto;
+    }
+
+    .overlay-container {
+        display: none; /* Esconde o painel de transição no mobile para simplificar */
+    }
+
+    .sign-in-container, 
+    .sign-up-container {
+        width: 100%;
+        position: relative;
+    }
+    
+    .logo {
+        font-size: 2.5rem;
+    }
+}

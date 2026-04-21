@@ -52,3 +52,29 @@
 .btn-sair:hover {
     background-color: #60a5fa62 !important;
 }
+
+/* Adicionar ao final do arquivo navbar.css */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column; /* Empilha logo e links */
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .nav-logo {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap; /* Permite que os links quebrem linha se necessário */
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
