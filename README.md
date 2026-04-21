@@ -25,7 +25,6 @@ Breve descrição.
 - 🔐 **Gestão de Acessos e Perfis:** Sistema restrito a usuários previamente cadastrados, contendo diferenciação de permissões para Clientes e Agentes.
 - 🚗 **Gestão de Aluguéis:** Clientes podem solicitar, alterar, consultar e cancelar seus pedidos de aluguel via internet
 - 🏦 **Análise Financeira e Aprovação:** Agentes podem realizar Avaliação de Crédito e Associação de Crédito.
-- 🌐 **Internacionalização (i18n):** Suporte aos idiomas Português BR e Inglês.
 
 ---
 ## 🛠 Tecnologias Utilizadas
@@ -41,6 +40,83 @@ As seguintes ferramentas, frameworks e bibliotecas foram utilizados na construç
 
 O portifólio é 100% então a arquitetura é simples e se resume à uma única camada de visualização do portifólio.
 
+## 🔧 Instalação e Execução
+
+### Pré-requisitos
+Certifique-se de que o usuário tenha o ambiente configurado.
+
+* **Java JDK:** Versão **21** ou superior (Necessário para o **Back-end Micronaut**)
+* **Gerenciador de Pacotes:** npm ou yarn
+* **Docker** 
+
+---
+
+### 🔑 Variáveis de Ambiente
+
+Crie arquivos `.env` específicos e/ou configure as variáveis de ambiente no seu sistema para cada parte da aplicação.
+
+#### 1 Back-end (Micronaut)
+
+Configure estas variáveis como **variáveis de ambiente do sistema** ou em um arquivo de configuração do Micronaut (`application.properties`).
+
+| Variável | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `JDBC_URL` | URL de conexão JDBC (PostgreSQL). | `jdbc:postgresql://aws-0-us-west-2.pooler.supabase.com:6543/postgres?user=postgres.fwulpocpojcdgdpxubng&password=Projeto_lab2` |
+| `DB_USERNAME` | Usuário do banco de dados. | `postgres.fwulpocpojcdgdpxubng` |
+| `DB_PASSWORD` | Senha do banco de dados. | `Projeto_lab2` |
+
+#### 2 Front-end (HTML, CSS, JS)
+
+Sem variáveis de ambiente.
+
+---
+
+Para adicionar essas variáveis:
+
+1.  Acesse a página de Environment Variables do seu projeto no Render
+2.  Clique em **"Add"** para adicionar cada variável com o nome e valor correspondente.
+
+---
+
+## 📂 Estrutura de Pastas
+
+Descreva o propósito das pastas principais.
+
+```
+/Sistema-de-Aluguel-de-Carros
+├── README.md                                # 📘 Documentação principal do projeto.
+│
+├── index.html                               # 📘 Documentação principal do projeto.
+│
+├── / Codigo
+│     └── /back-end/demo                     # 📁 Aplicação Micronaut
+│       │   ├── Dockerfile                   # 🐳 Docker build do Front-end.
+│       │   ├── .build.gradle.kts/gradle.properties # ⚙️ Gerenciamento de dependências e build
+│       │   ├── /.gradle                     # 📂 Arquivos temporários e cache do Gradle.
+│       │   ├── /bin                         # 📂 Binários compilados da aplicação.
+│       │   ├── /build                       # 🏗️ Artefatos gerados após a compilação.
+│       │   ├── /gradle/wrapper              # 📦 Scripts para execução do Gradle sem instalação local.
+│       │   ├── /src/main/java               # 📂 Código-fonte Java
+│       │   │      └── /com/exemplo/app
+│       │   │          ├── /controller       # 🎮 Endpoints REST.
+│       │   │          ├── /Facade           # 🏛️ Padrão Facade para simplificar o acesso aos serviços.
+│       │   │          ├── /model            # 🧬 Classes de domínio e entidades persistentes (JPA).
+│       │   │          ├── /repository       # 🗄️ Repositórios (JPA/Hibernate).
+│       │   │          └── /service          # ⚙️ Regras e lógica de negócio.
+│       │   └── /src/main/resources          # 📄 Configurações (application.yml) e propriedades.
+│       │
+│       └── /front-end                       # 📁 Aplicação HTML, CSS, JS
+│           ├── /css                         # 🎨 Estilos globais, temas, Design System.
+│           ├── /html                        # 🌐 Estrutura das páginas da aplicação.
+│           ├── /img                         # 🖼️ Imagens.
+│           └── /js                          # 💡 Ícones.
+│
+├── /Diagramas                    # 📂 Diagramas de desenvolvimento do sistema
+│
+└── /Histórias de Usuários        # 📂 Cenários de uso do sistema
+```
+
+---
 
 ## 🔗 Documentações utilizadas
 
