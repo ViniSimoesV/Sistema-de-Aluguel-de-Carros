@@ -16,7 +16,7 @@ permita efetuar, cancelar e modificar pedidos através da Internet.
 ---
 
 ## 📝 Sobre o Projeto
-Breve descrição.
+O Sistema de Aluguel de Carros, Horizontes, é uma plataforma desenvolvida para gerenciar o ciclo de vida completo de locação de veículos. A aplicação permite o cadastro de clientes e agentes, a gestão de inventário de automóveis e a formalização de contratos e pedidos de aluguel.
 
 ---
 
