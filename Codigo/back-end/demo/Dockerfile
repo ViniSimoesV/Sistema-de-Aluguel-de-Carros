@@ -7,6 +7,7 @@ COPY gradlew .
 COPY gradle gradle
 COPY build.gradle.kts .
 COPY settings.gradle.kts .
+COPY gradle.properties .
 
 # Dar permissão e baixar dependências
 RUN chmod +x gradlew
