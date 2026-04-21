@@ -38,7 +38,22 @@ As seguintes ferramentas, frameworks e bibliotecas foram utilizados na construç
 
 ## 🏗 Arquitetura
 
-O portifólio é 100% então a arquitetura é simples e se resume à uma única camada de visualização do portifólio.
+1. **Visão geral da arquitetura**
+     - Back-end: Desenvolvido em Java com o framework Micronaut, focado em alta performance e baixo consumo de memória.
+     - Front-end: Interface desacoplada (SPA) hospedada na Vercel.
+     - Persistência: Utilização do Supabase como DBaaS (Database as a Service), aproveitando o PostgreSQL.
+
+2. **Padrões de design adotados**
+     - MVC (Model-View-Controller): Para a organização fundamental das camadas.
+     - Facade: Utilizado para simplificar a interface de comunicação entre os Controllers e a lógica complexa de múltiplos Services (ex: ClienteFacade).
+     - Repository: Para abstrair o acesso aos dados e isolar as consultas SQL/JPA do restante da aplicação.
+     - DTO (Data Transfer Object): Utilizado para o tráfego de dados entre as camadas, evitando a exposição direta das entidades de banco de dados (ex: ClienteDTO).
+
+3. **Fluxo de dados**
+     - A View realiza requisições via protocolo HTTP/REST.
+     - Os Controllers recebem as chamadas e delegam para a Facade ou Services
+     - Os Services processam as regras de negócio e utilizam os Repositories.
+     - O Repository comunica-se com o Supabase via TCP/IP.
 
 ## 🔧 Instalação e Execução
 
