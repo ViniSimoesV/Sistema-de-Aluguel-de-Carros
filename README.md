@@ -106,8 +106,8 @@ Descreva o propósito das pastas principais.
 ```
 /Sistema-de-Aluguel-de-Carros
 ├── README.md                                # 📘 Documentação principal do projeto.
-│
-├── index.html                               # 📘 Documentação principal do projeto.
+├── index.html                               # 🌍 Página de entrada/apresentação do projeto.
+├── Horizontes - Aluguel de Carros.md        # 📄 Apresentação do projeto.
 │
 ├── / Codigo
 │     └── /back-end/demo                     # 📁 Aplicação Micronaut
