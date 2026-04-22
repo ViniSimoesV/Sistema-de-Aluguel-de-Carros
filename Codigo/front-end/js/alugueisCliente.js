@@ -1,6 +1,7 @@
-const apiPedidos = 'http://localhost:8080/pedidos';
-const apiCarros = 'http://localhost:8080/carros';
-const apiClientes = 'http://localhost:8080/clientes';
+const API_URL = "https://sistema-de-aluguel-de-carros-42yo.onrender.com";
+const apiPedidos = `${API_URL}/pedidos`;
+const apiCarros = `${API_URL}/carros`;
+const apiClientes = `${API_URL}/clientes`;
 
 async function carregarAlugueisDoCliente(cpfAtual) {
     try {
@@ -9,8 +10,8 @@ async function carregarAlugueisDoCliente(cpfAtual) {
         if (!resPedidos.ok) throw new Error('Erro ao buscar pedidos');
         const todosPedidos = await resPedidos.json();
 
-        // 2. Filtra os pedidos pelo CPF do cliente logado
-        const pedidosFiltrados = todosPedidos.filter(p => p.cpfCliente === cpfAtual);
+        // 2. Verifique se no seu banco o campo se chama 'cpfCliente' ou apenas 'cpf'
+        const pedidosFiltrados = todosPedidos.filter(p => p.cpfCliente === cpfAtual || p.cpf === cpfAtual);
 
         //const tbody = document.querySelector('tabelaAluguel').nextElementSibling;
         const tbody = document.querySelector('.modern-table tbody');

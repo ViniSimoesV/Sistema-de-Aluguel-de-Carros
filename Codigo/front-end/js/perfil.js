@@ -4,13 +4,14 @@ const editGroup = document.getElementById('editGroup');
 const form = document.getElementById('formPerfil');
 const inputs = form.querySelectorAll('input');
 
-const apiBase = 'http://localhost:8080/clientes';
-let senhaUsuario = ""; // Guardamos a senha para não perdê-la no PUT
+const API_URL = "https://sistema-de-aluguel-de-carros-42yo.onrender.com";
+const apiBase = `${API_URL}/clientes`; 
+let senhaUsuario = "";
 
 async function carregarPerfil() {
     const cpf = localStorage.getItem('cpfLogado');
     if (!cpf) {
-        //window.location.href = '../html/index.html';
+        window.location.href = 'index.html'; // Redireciona se não houver login
         return;
     }
 
@@ -26,6 +27,10 @@ async function carregarPerfil() {
         document.getElementById('perfil-telefone').value = cliente.telefone || "";
         document.getElementById('perfil-dataNascimento').value = cliente.dataNascimento || "";
         document.getElementById('perfil-emprego').value = cliente.emprego || "";
+        
+        const entidadeInput = document.getElementById('perfil-entidade');
+        if(entidadeInput) entidadeInput.value = (cliente.entidadeEmpregadora && cliente.entidadeEmpregadora[0]) || "Não informada";
+
         document.getElementById('perfil-ruaCliente').value = cliente.ruaCliente || "";
         document.getElementById('perfil-numeroCliente').value = cliente.numeroCliente || "";
         document.getElementById('perfil-bairroCliente').value = cliente.bairroCliente || "";
