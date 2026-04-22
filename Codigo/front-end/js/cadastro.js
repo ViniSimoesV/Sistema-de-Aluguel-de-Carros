@@ -1,3 +1,5 @@
+const API_URL = "https://sistema-de-aluguel-de-carros-42yo.onrender.com"; // URL do backend
+
 const inputIdentificador = document.getElementById('identificador');
 const camposCliente = document.getElementById('camposCliente');
 const camposAgente = document.getElementById('camposAgente');
@@ -25,7 +27,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
     const ehAgente = valorId.length > 11;
     
     // Define para qual endpoint enviar com base no tipo
-    const endpoint = ehAgente ? 'http://localhost:8080/agentes' : 'http://localhost:8080/clientes';
+    const endpoint = ehAgente ? `${API_URL}/agentes` : `${API_URL}/clientes`;
     
     const corpoRequisicao = {
         email: document.getElementById('email').value,
