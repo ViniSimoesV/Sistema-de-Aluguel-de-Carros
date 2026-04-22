@@ -103,11 +103,11 @@ document.querySelector('.sign-in-container form').addEventListener('submit', asy
                 if (ehCliente) {
                     localStorage.setItem('cpfLogado', identificador);
                     localStorage.setItem('tipoUsuario', 'cliente');
-                    window.location.href = 'perfil_cliente.html';
+                    window.location.href = '/Codigo/front-end/html/alugueis_cliente.html';
                 } else {
                     localStorage.setItem('cnpjLogado', identificador);
                     localStorage.setItem('tipoUsuario', 'agente');
-                    window.location.href = 'perfil_agente.html';
+                    window.location.href = '/Codigo/front-end/html/alugueis_agente.html';
                 }
             } else {
                 alert("Senha incorreta. Tente novamente.");
