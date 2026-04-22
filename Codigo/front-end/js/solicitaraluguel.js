@@ -1,5 +1,5 @@
-const apiPedidos = 'http://localhost:8080/pedidos';
-const apiCarros = 'http://localhost:8080/carros';
+const apiPedidos = 'https://sistema-de-aluguel-de-carros-42yo.onrender.com/pedidos';
+const apiCarros = 'https://sistema-de-aluguel-de-carros-42yo.onrender.com/carros';
 
 function obterCpfLogado() {
     // Busca a chave que definimos no script de login

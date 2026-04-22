@@ -1,6 +1,6 @@
-const apiPedidos = 'http://localhost:8080/pedidos';
-const apiClientes = 'http://localhost:8080/clientes';
-const apiCarros = 'http://localhost:8080/carros';
+const apiPedidos = 'https://sistema-de-aluguel-de-carros-42yo.onrender.com/pedidos';
+const apiClientes = 'https://sistema-de-aluguel-de-carros-42yo.onrender.com/clientes';
+const apiCarros = 'https://sistema-de-aluguel-de-carros-42yo.onrender.com/carros';
 
 async function carregarPedidosPendentes(cnpjAgenteLogado) {
     try {

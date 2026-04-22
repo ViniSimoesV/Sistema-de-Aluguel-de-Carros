@@ -1,4 +1,4 @@
-const apiURL = 'http://localhost:8080/clientes';
+const apiURL = 'https://sistema-de-aluguel-de-carros-42yo.onrender.com/clientes';
 
 // 1. Carregar lista ao abrir a página
 document.addEventListener('DOMContentLoaded', carregarClientes);
