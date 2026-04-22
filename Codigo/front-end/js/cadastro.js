@@ -40,6 +40,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
         corpoRequisicao.tipo = document.getElementById('tipoAgente').value;
     } else {
         corpoRequisicao.cpf = valorId;
+        corpoRequisicao.nome = document.getElementById('nome').value;
         corpoRequisicao.rg = document.getElementById('rg').value;
         corpoRequisicao.dataNascimento = document.getElementById('dataNascimento').value;
         corpoRequisicao.ruaCliente = document.getElementById('rua').value;

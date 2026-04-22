@@ -15,5 +15,12 @@ public record ClienteDTO(
     @NotBlank String telefone,
     @NotNull LocalDate dataNascimento, 
     @NotBlank @Email String email, 
-    @NotBlank String senha
+    @NotBlank String senha,
+    
+    @NotBlank String ruaCliente,
+    @NotBlank String numeroCliente,
+    @NotBlank String bairroCliente,
+    @NotBlank String cidadeCliente,
+    String complementoCliente, 
+    Double rendimento 
 ) {}
