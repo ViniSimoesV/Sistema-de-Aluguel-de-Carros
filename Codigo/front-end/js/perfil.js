@@ -8,6 +8,8 @@ const API_URL = "https://sistema-de-aluguel-de-carros-42yo.onrender.com";
 const apiBase = `${API_URL}/clientes`; 
 let senhaUsuario = "";
 
+document.addEventListener('DOMContentLoaded', carregarPerfil);
+
 async function carregarPerfil() {
     const cpf = localStorage.getItem('cpfLogado');
     if (!cpf) {
@@ -24,7 +26,7 @@ async function carregarPerfil() {
         document.getElementById('perfil-cpf').value = cliente.cpf || "";
         document.getElementById('perfil-rg').value = cliente.rg || "";
         document.getElementById('perfil-email').value = cliente.email || "";
-        document.getElementById('perfil-telefone').value = cliente.telefone || "";
+        document.getElementById('perfil-telefone').value = cliente.Telefone || "";
         document.getElementById('perfil-dataNascimento').value = cliente.dataNascimento || "";
         document.getElementById('perfil-emprego').value = cliente.emprego || "";
         

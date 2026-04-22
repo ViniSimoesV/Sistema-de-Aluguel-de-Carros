@@ -4,6 +4,26 @@ const editGroup = document.getElementById('editGroup');
 const form = document.getElementById('formPerfil');
 const inputs = form.querySelectorAll('input, select');
 
+const API_URL = "https://sistema-de-aluguel-de-carros-42yo.onrender.com";
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const cnpj = localStorage.getItem('cnpjLogado');
+    if (!cnpj) return;
+
+    try {
+        const response = await fetch(`${API_URL}/agentes/${cnpj}`);
+        if (response.ok) {
+            const agente = await response.json();
+            // Preencha os campos do perfil_agente.html aqui
+            // Exemplo: document.getElementById('agente-nome').value = agente.nome;
+        }
+    } catch (error) {
+        console.error("Erro ao carregar dados do agente:", error);
+    }
+});
+
+
 // Função para ativar modo edição
 btnEditar.addEventListener('click', () => {
     inputs.forEach(input => {
