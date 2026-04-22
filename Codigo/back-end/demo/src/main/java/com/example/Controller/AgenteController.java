@@ -14,6 +14,7 @@ import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.annotation.Put;
 import io.micronaut.http.annotation.Status;
+import io.micronaut.http.server.cors.CrossOrigin;
 
 @Controller("/agentes")
 public class AgenteController {
