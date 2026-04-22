@@ -37,6 +37,9 @@
                 <input type="password" placeholder="Senha" />
                 <a href="#" class="forgot-password">Esqueceu sua senha?</a>
                 <button type="submit" class="btn-main">Entrar</button>
+                <button type="button" class="mobile-switch" onclick="container.classList.add('right-panel-active')">
+                    Não tem conta? Cadastre-se aqui
+                </button>
             </form>
         </div>
 
@@ -86,6 +89,10 @@
                     <input type="password" id="senha" placeholder="Senha" required />
                     <button type="submit" class="btn-main">Cadastrar</button>
                 </div>
+
+                <button type="button" class="mobile-switch" onclick="container.classList.remove('right-panel-active')">
+                    Já tem conta? Faça Login
+                </button>
             </form>
         </div>
     </div>

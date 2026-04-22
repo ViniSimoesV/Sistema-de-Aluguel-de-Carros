@@ -228,23 +228,122 @@ button.ghost:hover {
 }
 
 @media (max-width: 768px) {
+    /* Faz o container ocupar quase toda a largura da tela */
     .login-container {
         width: 95%;
-        min-height: 600px;
+        min-height: 80vh; 
         height: auto;
+        display: block; 
+        overflow-y: auto;
     }
 
+    /* Oculta o painel lateral (overlay) no mobile para ganhar espaço */
     .overlay-container {
-        display: none; /* Esconde o painel de transição no mobile para simplificar */
+        display: none;
     }
 
+    /* Faz os formulários de login/cadastro ocuparem 100% da largura */
     .sign-in-container, 
     .sign-up-container {
-        width: 100%;
-        position: relative;
+        width: 100% !important;
+        position: relative;  
+        height: auto !important;
+        min-height: 100%;
+        opacity: 0;
+        display: none;
     }
-    
-    .logo {
-        font-size: 2.5rem;
+
+    /* Ajusta a imagem de fundo para não esticar */
+    body {
+        background-size: cover;
+        background-position: center;
+        padding: 20px 0;
+    }
+
+    .login-container:not(.right-panel-active) .sign-in-container {
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Quando o cadastro ESTÁ ativo, mostra o Cadastro */
+    .login-container.right-panel-active .sign-up-container {
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Garante que o login suma totalmente quando o cadastro estiver ativo */
+    .login-container.right-panel-active .sign-in-container {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    /* 4. Ajuste do formulário interno */
+    form {
+        padding: 40px 20px !important;
+        height: auto !important; 
+    }
+
+    .input-group {
+        flex-direction: row;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .login-container form {
+        padding: 0 20px;
+    }
+
+    .login-container input {
+        margin: 5px 0;
+    }
+
+    .social-container {
+        margin: 10px 0;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+/* Este botão deve ser criado no seu HTML logo abaixo do formulário */
+.mobile-switch {
+    display: none; /* Escondido por padrão no desktop */
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .mobile-switch {
+        display: block; /* Aparece apenas no mobile */
+    }
+
+    /* Força o formulário de cadastro a aparecer quando a classe estiver ativa */
+    .login-container.right-panel-active .sign-up-container {
+        transform: none;
+        opacity: 1;
+        z-index: 5;
+        animation: none;
+    }
+
+    /* Garante que o login suma quando o cadastro aparecer no mobile */
+    .login-container.right-panel-active .sign-in-container {
+        transform: none;
+        opacity: 0;
+        z-index: 1;
     }
 }
