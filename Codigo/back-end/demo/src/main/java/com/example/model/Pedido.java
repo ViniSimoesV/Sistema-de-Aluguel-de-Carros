@@ -3,13 +3,14 @@ package com.example.model;
 import java.time.LocalDate;
 
 import io.micronaut.core.annotation.Introspected;
-import jakarta.persistence.Id;
 import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.serde.annotation.Serdeable;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Introspected
-
+@Serdeable
 @Entity
 @Table(name = "pedido") 
 @MappedEntity(value = "pedido")

@@ -1,14 +1,16 @@
 package com.example.model;
 
 import io.micronaut.core.annotation.Introspected;
-import jakarta.persistence.Id;
 import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.serde.annotation.Serdeable;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Introspected
 
 @Entity 
+@Serdeable
 @Table(name = "carro") 
 @MappedEntity(value = "carro")
 public class Carro {

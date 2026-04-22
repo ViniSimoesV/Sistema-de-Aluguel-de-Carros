@@ -6,16 +6,17 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.micronaut.core.annotation.Introspected;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import io.micronaut.data.annotation.MappedEntity;
-import io.micronaut.data.annotation.Relation;
+import io.micronaut.serde.annotation.Serdeable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Introspected
 @Entity 
+@Serdeable
 @Table(name = "cliente") 
 @MappedEntity(value = "cliente")
 public class Cliente {

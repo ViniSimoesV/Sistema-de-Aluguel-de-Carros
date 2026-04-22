@@ -4,11 +4,13 @@ import io.micronaut.core.annotation.Introspected;
 import jakarta.persistence.Id;
 import io.micronaut.data.annotation.MappedEntity;
 import jakarta.persistence.Entity;
+import io.micronaut.serde.annotation.Serdeable;
 import jakarta.persistence.Table;
 
 @Introspected
 
 @Entity 
+@Serdeable
 @Table(name = "agente") 
 @MappedEntity(value = "agente")
 public class Agente {
